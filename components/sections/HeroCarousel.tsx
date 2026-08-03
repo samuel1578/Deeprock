@@ -201,9 +201,8 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
                       >
                         <ButtonLink
                           href={slide.primaryCTA.href}
-                          variant="primary"
+                          variant="bright-pattern"
                           size="lg"
-                          className="!text-black"
                         >
                           {slide.primaryCTA.label}
                         </ButtonLink>

@@ -37,7 +37,7 @@ export const heroSlides: HeroSlide[] = [
       href: '/about',
     },
     desktopImage: '/images/home/hero/responsible-trading-desktop.jpeg',
-    mobileImage: '/images/home/hero/responsible-trading-mobile.jpg',
+    mobileImage: '/images/home/hero/responsible-trading-mobile.jpeg',
     imageAlt: 'Ghanaian precious-minerals professionals inspecting gold samples in a secure aggregation facility',
     desktopObjectPosition: '58% center',
     mobileObjectPosition: '52% 38%',
@@ -112,7 +112,7 @@ export const heroSlides: HeroSlide[] = [
 export const companyIntroductionContent = {
   heading: 'Responsible Trading. Capable Operations. Long-Term Value.',
   body: 'DeepRock Mining Ltd specialises in precious minerals trading, particularly the buying and selling of gold, as well as responsible mining operations under a self-financing Aggregator Licence. Our work includes sourcing, purchasing, aggregating and marketing gold while supporting sustainable mining and technical activities.\n\nWe work closely with licensed small-scale miners, mining communities, investors, technical partners and institutions. Our aim is to provide reliable market access and responsible service solutions while operating with integrity, transparency and respect for applicable requirements.',
-  image: '/images/home/company/company-overview.webp',
+  image: '/images/home/company/company-overview.jpeg',
 };
 
 export const servicesOverviewContent = {

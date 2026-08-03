@@ -2,7 +2,7 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, A11y } from 'swiper/modules'
-import { TextLink } from '@/components/ui/TextLink'
+import { ButtonLink } from '@/components/ui/Button';
 
 // Import Swiper styles
 import 'swiper/css'
@@ -30,23 +30,31 @@ export function MobileServicesCarousel({ services }: MobileServicesCarouselProps
                 watchOverflow
                 className="mb-4"
             >
-                {groupedServices.map((group, groupIndex) => (
+                {groupedServices.map((group: any[], groupIndex: number) => (
                     <SwiperSlide key={groupIndex} className="h-auto">
                         <div className="grid grid-cols-1 gap-4">
-                            {group.map((service) => (
-                                <div key={service.id} className="bg-white p-5 rounded-lg flex flex-col shadow-sm w-full">
-                                    <p className="text-[10px] font-medium uppercase tracking-wide text-copper mb-2">
-                                        {service.category}
-                                    </p>
-                                    <h3 className="font-display text-lg text-basalt mb-2 line-clamp-2 leading-tight">
-                                        {service.name}
-                                    </h3>
-                                    <p className="text-graphite text-[11px] mb-4 line-clamp-3 flex-grow leading-relaxed">
-                                        {service.summary}
-                                    </p>
-                                    <TextLink href={`/services/${service.slug}`} showIcon className="text-[11px]">
-                                        Learn more
-                                    </TextLink>
+                            {group.map((service: any) => (
+                                <div key={service.id} className="bg-white p-5 rounded-lg flex flex-col shadow-sm w-full h-full">
+                                    <div>
+                                        <p className="text-[10px] font-medium uppercase tracking-wide text-copper mb-2">
+                                            {service.category}
+                                        </p>
+                                        <h3 className="font-display text-lg text-basalt mb-2 line-clamp-2 leading-tight">
+                                            {service.name}
+                                        </h3>
+                                        <p className="text-graphite text-[11px] mb-4 line-clamp-3 leading-relaxed">
+                                            {service.summary}
+                                        </p>
+                                    </div>
+                                    <div className="mt-auto pt-4">
+                                        <ButtonLink
+                                            href={`/services/${service.slug}`}
+                                            variant="dark-pattern"
+                                            size="sm"
+                                        >
+                                            Learn More
+                                        </ButtonLink>
+                                    </div>
                                 </div>
                             ))}
                         </div>

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { PageHero } from '@/components/sections/PageHero';
 import { Container, Section, Stack } from '@/components/layout/Container';
-import { TextLink } from '@/components/ui/TextLink';
+import { ButtonLink } from '@/components/ui/Button';
+import { BrandGlowText } from '@/components/ui/BrandGlowText';
 import { services, servicesOverviewIntro } from '@/content/services';
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="SERVICES"
         title="Integrated Services Across Trading, Mining and Technical Operations."
-        summary="Explore DeepRock's service portfolio across gold trading, aggregation, mining, exploration, equipment, technical consulting, environmental responsibility and mining support."
+        summary={<BrandGlowText>Explore DeepRock&apos;s service portfolio across gold trading, aggregation, mining, exploration, equipment, technical consulting, environmental responsibility and mining support.</BrandGlowText>}
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services' },
@@ -40,21 +41,28 @@ export default function ServicesPage() {
                   </h3>
                   <div className="grid md:grid-cols-2 gap-6 mb-12">
                     {categoryServices.map((service) => (
-                      <a
+                      <article
                         key={service.id}
-                        href={`/services/${service.slug}`}
-                        className="group bg-limestone p-6 md:p-8 rounded-lg hover:shadow-lg hover:bg-clay/10 transition-all"
+                        className="bg-limestone p-6 md:p-8 rounded-lg flex h-full flex-col"
                       >
-                        <h4 className="font-display text-xl text-basalt mb-3 group-hover:text-copper transition-colors">
-                          {service.name}
-                        </h4>
-                        <p className="text-graphite mb-4">
-                          {service.summary}
-                        </p>
-                        <TextLink href={`/services/${service.slug}`}>
-                          Learn more
-                        </TextLink>
-                      </a>
+                        <div>
+                          <h4 className="font-display text-xl text-basalt mb-3">
+                            {service.name}
+                          </h4>
+                          <p className="text-graphite mb-4">
+                            {service.summary}
+                          </p>
+                        </div>
+                        <div className="mt-auto pt-6">
+                          <ButtonLink
+                            href={`/services/${service.slug}`}
+                            variant="dark-pattern"
+                            size="sm"
+                          >
+                            Learn More
+                          </ButtonLink>
+                        </div>
+                      </article>
                     ))}
                   </div>
                 </div>

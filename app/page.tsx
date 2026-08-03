@@ -12,6 +12,7 @@ import { heroSlides, companyIntroductionContent, partnershipCTAContent, coreValu
 import { services } from '@/content/services';
 import { leadershipFeaturedPerson, leadershipCompanyDirectionStatement } from '@/content/leadership';
 import { getLatestArticles } from '@/content/news';
+import { BrandGlowText } from '@/components/ui/BrandGlowText';
 
 export const metadata: Metadata = {
   title: 'DeepRock Mining Ltd — Responsible Gold Trading & Mining',
@@ -42,7 +43,7 @@ export default function HomePage() {
                 Integrated Services Across Trading, Mining and Technical Operations.
               </h2>
               <p className="text-lg text-graphite">
-                Explore DeepRock&apos;s service portfolio across gold trading, aggregation, mining, exploration, equipment, technical consulting, environmental responsibility and mining support.
+                <BrandGlowText>Explore DeepRock&apos;s service portfolio across gold trading, aggregation, mining, exploration, equipment, technical consulting, environmental responsibility and mining support.</BrandGlowText>
               </p>
             </div>
 
@@ -50,29 +51,37 @@ export default function HomePage() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-6">
               {featuredServices.map((service) => (
-                <div
+                <article
                   key={service.id}
-                  className="bg-white p-6 md:p-8 rounded-lg hover:shadow-lg transition-shadow"
+                  className="bg-white p-6 md:p-8 rounded-lg hover:shadow-lg transition-shadow flex h-full flex-col"
                 >
-                  <p className="text-xs font-medium uppercase tracking-wide text-copper mb-3">
-                    {service.category}
-                  </p>
-                  <h3 className="font-display text-2xl text-basalt mb-3">
-                    {service.name}
-                  </h3>
-                  <p className="text-graphite mb-6 line-clamp-2">
-                    {service.summary}
-                  </p>
-                  <TextLink href={`/services/${service.slug}`} showIcon>
-                    Learn more
-                  </TextLink>
-                </div>
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wide text-copper mb-3">
+                      {service.category}
+                    </p>
+                    <h3 className="font-display text-2xl text-basalt mb-3">
+                      {service.name}
+                    </h3>
+                    <p className="text-graphite mb-6 line-clamp-2">
+                      {service.summary}
+                    </p>
+                  </div>
+                  <div className="mt-auto pt-6">
+                    <ButtonLink
+                      href={`/services/${service.slug}`}
+                      variant="dark-pattern"
+                      size="sm"
+                    >
+                      Learn More
+                    </ButtonLink>
+                  </div>
+                </article>
               ))}
             </div>
 
-            <TextLink href="/services" className="text-base">
-              View all services
-            </TextLink>
+            <ButtonLink href="/services" variant="bright-pattern" size="lg">
+              View All Services
+            </ButtonLink>
           </Stack>
         </Container>
       </Section>
@@ -119,17 +128,17 @@ export default function HomePage() {
       </Section>
 
       {/* Leadership Feature */}
-      <Section className="bg-basalt text-white">
+      <Section className="bg-white">
         <Container variant="wide">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <Stack gap="lg">
               <p className="text-sm font-medium uppercase tracking-wide text-clay">
                 LEADERSHIP
               </p>
-              <h2 className="font-display text-4xl md:text-5xl">
+              <h2 className="font-display text-4xl md:text-5xl text-basalt">
                 Experienced Leadership Across Trading, Operations and Technical Services.
               </h2>
-              <p className="text-lg text-limestone">
+              <p className="text-lg text-black">
                 {leadershipCompanyDirectionStatement}
               </p>
               <TextLink href="/about/leadership" className="text-copper">
@@ -138,14 +147,22 @@ export default function HomePage() {
             </Stack>
 
             {leadershipFeaturedPerson && (
-              <ImageWithFallback
-                src={leadershipFeaturedPerson.image}
-                alt={leadershipFeaturedPerson.name}
-                width={500}
-                height={600}
-                category="Team"
-                className="rounded-lg"
-              />
+              <div className="flex flex-col">
+                <ImageWithFallback
+                  src={leadershipFeaturedPerson.image}
+                  alt={leadershipFeaturedPerson.name}
+                  width={500}
+                  height={600}
+                  category="Team"
+                  className="rounded-lg mb-6"
+                />
+                <h3 className="font-display text-2xl text-basalt mb-1 font-bold">
+                  {leadershipFeaturedPerson.name}
+                </h3>
+                <p className="text-copper font-bold uppercase tracking-wide text-sm">
+                  {leadershipFeaturedPerson.role}
+                </p>
+              </div>
             )}
           </div>
         </Container>
@@ -217,7 +234,7 @@ export default function HomePage() {
             <Inline className="justify-center" gap="lg">
               <ButtonLink
                 href={partnershipCTAContent.primaryCTA.href}
-                variant="secondary"
+                variant="bright-pattern"
                 size="lg"
               >
                 {partnershipCTAContent.primaryCTA.label}

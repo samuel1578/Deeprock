@@ -4,7 +4,7 @@ import { Breadcrumbs, type BreadcrumbItem } from '@/components/layout/Breadcrumb
 interface PageHeroProps {
   eyebrow?: string;
   title: string;
-  summary?: string;
+  summary?: React.ReactNode;
   breadcrumbs?: BreadcrumbItem[];
   image?: string;
   imageAlt?: string;

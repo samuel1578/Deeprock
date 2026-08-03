@@ -29,10 +29,10 @@ export function MobileNewsCarousel({ articles }: MobileNewsCarouselProps) {
                 watchOverflow
                 className="mb-4"
             >
-                {groupedArticles.map((group, groupIndex) => (
+                {groupedArticles.map((group: any[], groupIndex: number) => (
                     <SwiperSlide key={groupIndex} className="h-auto">
                         <div className="grid grid-cols-1 gap-4">
-                            {group.map((article) => (
+                            {group.map((article: any) => (
                                 <a
                                     key={article.id}
                                     href={`/news/${article.slug}`}

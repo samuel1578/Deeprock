@@ -11,7 +11,7 @@ export const leadershipTeam: LeadershipMember[] = [
   {
     name: 'Maxwell Boakye (Campbell)',
     role: 'Managing Director & Chief Executive Officer',
-    image: '/images/team/maxwell-boakye.webp',
+    image: '/images/home/team/md.jpg',
     biography: 'Biography to be supplied and approved by the client. Do not invent credentials or career history.',
   },
   {

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { ctaPrimary } from '@/content/navigation';
 import { DesktopNav } from './navigation/DesktopNav';
+import { ButtonLink } from '@/components/ui/Button';
 import { MobileNav } from './navigation/MobileNav';
 
 export function SiteHeader() {
@@ -68,12 +69,14 @@ export function SiteHeader() {
               </div>
 
               <div className="flex items-center gap-4">
-                <Link
+                <ButtonLink
                   href={ctaPrimary.href}
-                  className="hidden md:inline-flex px-6 py-2 bg-copper text-white font-medium rounded-md hover:bg-copper-hover transition-colors text-sm whitespace-nowrap"
+                  variant="bright-pattern"
+                  size="md"
+                  className="hidden md:inline-flex"
                 >
                   {ctaPrimary.label}
-                </Link>
+                </ButtonLink>
 
                 <button
                   ref={hamburgerRef}

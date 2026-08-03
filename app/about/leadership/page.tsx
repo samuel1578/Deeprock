@@ -40,10 +40,10 @@ export default function LeadershipPage() {
                     category="Team"
                     className="mb-6 rounded-lg"
                   />
-                  <h3 className="font-display text-xl text-basalt mb-1">
+                  <h3 className="font-display text-xl text-basalt mb-1 font-bold">
                     {member.name}
                   </h3>
-                  <p className="text-sm text-copper font-medium mb-3">
+                  <p className="text-sm text-copper font-bold mb-3 uppercase tracking-wide">
                     {member.role}
                   </p>
                   <p className="text-sm text-graphite">

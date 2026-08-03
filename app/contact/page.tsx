@@ -68,11 +68,11 @@ export default function ContactPage() {
                 Online form delivery is not yet connected. Please contact DeepRock by phone or email.
               </p>
               <div className="space-y-4">
-                <ButtonLink href={companyContact.phoneLink} variant="primary" size="lg">
+                <ButtonLink href={companyContact.phoneLink} variant="bright-pattern" size="lg">
                   Call {companyContact.phone}
                 </ButtonLink>
                 <br />
-                <ButtonLink href={companyContact.emailLink} variant="primary" size="lg">
+                <ButtonLink href={companyContact.emailLink} variant="bright-pattern" size="lg">
                   Email Us
                 </ButtonLink>
               </div>
