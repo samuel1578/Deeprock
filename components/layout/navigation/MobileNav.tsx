@@ -118,21 +118,19 @@ export function MobileNav({ onClose, triggerRef }: MobileNavProps) {
                       )
                     }
                     aria-expanded={openAccordion === item.href}
-                    className={`w-full flex items-center justify-between px-3 py-3.5 text-base font-medium transition-colors duration-200 rounded-md ${
-                      openAccordion === item.href
-                        ? 'text-copper bg-quartz/60'
-                        : 'text-graphite hover:text-copper hover:bg-quartz/40'
-                    }`}
+                    className={`w-full flex items-center justify-between px-3 py-3.5 text-base font-medium transition-colors duration-200 rounded-md ${openAccordion === item.href
+                      ? 'text-copper bg-quartz/60'
+                      : 'text-graphite hover:text-copper hover:bg-quartz/40'
+                      }`}
                   >
                     <span className={openAccordion === item.href ? 'text-copper' : ''}>
                       {item.label}
                     </span>
                     <ChevronDown
-                      className={`w-5 h-5 transition-all duration-200 ${
-                        openAccordion === item.href
-                          ? 'rotate-180 text-copper'
-                          : 'text-stone'
-                      }`}
+                      className={`w-5 h-5 transition-all duration-200 ${openAccordion === item.href
+                        ? 'rotate-180 text-copper'
+                        : 'text-stone'
+                        }`}
                     />
                   </button>
                   {openAccordion === item.href && (
@@ -191,6 +189,14 @@ export function MobileNav({ onClose, triggerRef }: MobileNavProps) {
             >
               {companyContact.email}
             </a>
+            <div className="mt-2 text-xs text-graphite/80 leading-relaxed max-w-[240px] whitespace-pre-line">
+              <p>
+                The Emporium, 3rd Floor{"\n"}
+                Mövenpick Ambassador Hotel{"\n"}
+                Independence Avenue, Ridge{"\n"}
+                Accra, Ghana
+              </p>
+            </div>
           </div>
         </div>
       </nav>

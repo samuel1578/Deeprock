@@ -71,7 +71,12 @@ export function SiteFooter() {
                 <MapPin className="w-5 h-5 text-copper flex-shrink-0 mt-0.5" />
                 <div className="text-sm">
                   <p className="text-stone text-xs mb-1">Office</p>
-                  <p>{companyContact.location}</p>
+                  <p className="leading-relaxed whitespace-pre-line">
+                    The Emporium, 3rd Floor{"\n"}
+                    Mövenpick Ambassador Hotel{"\n"}
+                    Independence Avenue, Ridge{"\n"}
+                    Accra, Ghana
+                  </p>
                 </div>
               </div>
             </div>

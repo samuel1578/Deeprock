@@ -14,9 +14,9 @@ export const companyContact = {
   phoneLink: 'tel:+233541703325',
   email: 'Deeprockmining.gh@gmail.com',
   emailLink: 'mailto:Deeprockmining.gh@gmail.com',
-  address: 'The Condos, First Floor, East Legon, Accra, Ghana',
+  address: 'The Emporium, 3rd Floor, Mövenpick Ambassador Hotel, Independence Avenue, Ridge, Accra, Ghana',
   postalAddress: 'P.O. Box CT 3621, Cantonments, Accra',
-  location: 'East Legon, Accra',
+  location: 'The Emporium, 3rd Floor, Mövenpick Ambassador Hotel, Independence Avenue, Ridge, Accra, Ghana',
   locationLink: '/contact',
 } as const;
 
