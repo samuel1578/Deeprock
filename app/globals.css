@@ -1,0 +1,251 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@font-face {
+  font-family: 'Marcellus';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/marcellus/marcellus-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/manrope/manrope-variable.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'Manrope';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/manrope/manrope-variable-italic.woff2') format('woff2-variations');
+}
+
+@theme inline {
+  --color-basalt: #161B1E;
+  --color-slate: #252D31;
+  --color-copper: #B75A32;
+  --color-copper-hover: #914222;
+  --color-clay: #D08A61;
+  --color-quartz: #F6F3ED;
+  --color-limestone: #E9E3D9;
+  --color-stone: #C9C2B8;
+  --color-graphite: #545D61;
+  --color-white: #FFFFFF;
+
+  --font-display: Marcellus, Georgia, serif;
+  --font-body: Manrope, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+
+  --text-display-xl: clamp(3.25rem, 5.2vw, 6rem);
+  --text-display-lg: clamp(2.75rem, 4.4vw, 4.75rem);
+  --text-h1: clamp(2.5rem, 3.8vw, 4rem);
+  --text-h2: clamp(2rem, 3vw, 3.25rem);
+  --text-h3: clamp(1.625rem, 2.1vw, 2.25rem);
+  --text-h4: clamp(1.25rem, 1.5vw, 1.625rem);
+  --text-lead: clamp(1.125rem, 1.25vw, 1.375rem);
+  --text-body-lg: clamp(1.0625rem, 1vw, 1.1875rem);
+  --text-body: clamp(1rem, 0.85vw, 1.0625rem);
+  --text-body-sm: clamp(0.875rem, 0.75vw, 0.9375rem);
+  --text-label: 0.8125rem;
+  --text-caption: 0.75rem;
+
+  --container-reading: 48rem;
+  --container-standard: 78rem;
+  --container-wide: 90rem;
+  --container-cinematic: 105rem;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 80px;
+  --space-5xl: 96px;
+  --space-6xl: 128px;
+  --space-7xl: 160px;
+
+  --radius-controls: 4px;
+  --radius-button: 4px;
+  --radius-card: 8px;
+  --radius-panel: 12px;
+
+  --shadow-sm: 0 1px 2px rgba(22, 27, 30, 0.06);
+  --shadow-md: 0 2px 8px rgba(22, 27, 30, 0.08);
+  --shadow-lg: 0 4px 16px rgba(22, 27, 30, 0.1);
+
+  --section-compact: clamp(3rem, 5vw, 5rem);
+  --section-default: clamp(4.5rem, 7vw, 7rem);
+  --section-large: clamp(5.5rem, 9vw, 9rem);
+  --section-cinematic: clamp(6rem, 11vw, 11rem);
+
+  --gap-sm: 1rem;
+  --gap-md: 1.5rem;
+  --gap-lg: 2rem;
+  --gap-editorial: clamp(2rem, 4vw, 5rem);
+}
+
+:root {
+  color-scheme: light;
+
+  --background: #F6F3ED;
+  --foreground: #161B1E;
+  --surface: #FFFFFF;
+  --surface-muted: #F6F3ED;
+  --primary: #B75A32;
+  --primary-hover: #914222;
+  --primary-foreground: #FFFFFF;
+  --muted-foreground: #545D61;
+  --border: #C9C2B8;
+  --border-strong: #252D31;
+  --dark-surface: #161B1E;
+  --dark-surface-foreground: #F6F3ED;
+}
+
+@layer base {
+  * {
+    @apply outline-copper/30;
+  }
+
+  html {
+    @apply bg-quartz scroll-smooth;
+  }
+
+  body {
+    @apply text-graphite font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-basalt;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .text-display-xl {
+    font-size: var(--text-display-xl);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .text-display-lg {
+    font-size: var(--text-display-lg);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+  }
+
+  .text-h1 {
+    font-size: var(--text-h1);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .text-h2 {
+    font-size: var(--text-h2);
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .text-h3 {
+    font-size: var(--text-h3);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .text-h4 {
+    font-size: var(--text-h4);
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  .text-lead {
+    font-size: var(--text-lead);
+    line-height: 1.65;
+  }
+
+  .text-body-lg {
+    font-size: var(--text-body-lg);
+    line-height: 1.65;
+  }
+
+  .text-body {
+    font-size: var(--text-body);
+    line-height: 1.65;
+  }
+
+  .text-body-sm {
+    font-size: var(--text-body-sm);
+    line-height: 1.6;
+  }
+
+  .text-label {
+    font-size: var(--text-label);
+    line-height: 1.5;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .text-caption {
+    font-size: var(--text-caption);
+    line-height: 1.5;
+  }
+
+  .max-w-reading {
+    max-width: var(--container-reading);
+  }
+
+  .max-w-standard {
+    max-width: var(--container-standard);
+  }
+
+  .max-w-wide {
+    max-width: var(--container-wide);
+  }
+
+  .max-w-cinematic {
+    max-width: var(--container-cinematic);
+  }
+}
+
+/* Swiper Pagination Scoped to Mobile Carousels */
+.deeprock-mobile-carousel .swiper-pagination {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  bottom: 0 !important;
+  position: relative !important;
+  margin-top: 1rem !important;
+}
+
+.deeprock-mobile-carousel .swiper-pagination-bullet {
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+  border-radius: 9999px !important;
+  background-color: var(--color-stone) !important;
+  opacity: 0.5 !important;
+  margin: 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+.deeprock-mobile-carousel .swiper-pagination-bullet-active {
+  width: 1.5rem !important;
+  background-color: var(--color-copper) !important;
+  opacity: 1 !important;
+}
