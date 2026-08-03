@@ -57,7 +57,7 @@ export function MobileValuesCarousel({ featured, supporting }: MobileValuesCarou
                                         {value.title}
                                     </h3>
                                     <p
-                                        className={`line-clamp-4 leading-relaxed ${value.isFeatured ? 'text-clay text-[11px]' : 'text-graphite text-[11px]'
+                                        className={`line-clamp-4 leading-relaxed ${value.isFeatured ? 'text-white/90 text-[11px]' : 'text-graphite text-[11px]'
                                             }`}
                                     >
                                         {value.description}

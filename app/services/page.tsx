@@ -3,6 +3,7 @@ import { PageHero } from '@/components/sections/PageHero';
 import { Container, Section, Stack } from '@/components/layout/Container';
 import { ButtonLink } from '@/components/ui/Button';
 import { BrandGlowText } from '@/components/ui/BrandGlowText';
+import { ServiceGlyph } from '@/components/icons/ServiceGlyph';
 import { services, servicesOverviewIntro } from '@/content/services';
 
 export const metadata: Metadata = {
@@ -43,24 +44,39 @@ export default function ServicesPage() {
                     {categoryServices.map((service) => (
                       <article
                         key={service.id}
-                        className="bg-limestone p-6 md:p-8 rounded-lg flex h-full flex-col"
+                        className="group relative bg-limestone p-6 md:p-8 rounded-lg flex h-full flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:bg-white"
                       >
-                        <div>
-                          <h4 className="font-display text-xl text-basalt mb-3">
+                        {/* Geological Texture Layer */}
+                        <div
+                          aria-hidden="true"
+                          className="pointer-events-none absolute inset-0 bg-[url('/images/patterns/deeprock-card-grid.svg')] bg-repeat bg-[length:260px_auto] opacity-[0.04] transition-opacity duration-300 group-hover:opacity-[0.08]"
+                        />
+
+                        <div className="relative z-10 flex flex-col h-full">
+                          <div className="relative inline-block mb-6">
+                            {/* Copper Glow Effect */}
+                            <div className="absolute inset-0 bg-copper/20 blur-2xl rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                            <ServiceGlyph
+                              serviceSlug={service.slug}
+                              className="relative z-10 transition-transform duration-300 motion-safe:group-hover:rotate-[4deg] motion-safe:group-hover:scale-[1.04]"
+                            />
+                          </div>
+
+                          <h4 className="font-display text-xl text-basalt mb-3 transition-colors duration-300 group-hover:text-copper">
                             {service.name}
                           </h4>
                           <p className="text-graphite mb-4">
                             {service.summary}
                           </p>
-                        </div>
-                        <div className="mt-auto pt-6">
-                          <ButtonLink
-                            href={`/services/${service.slug}`}
-                            variant="dark-pattern"
-                            size="sm"
-                          >
-                            Learn More
-                          </ButtonLink>
+                          <div className="mt-auto pt-6">
+                            <ButtonLink
+                              href={`/services/${service.slug}`}
+                              variant="dark-pattern"
+                              size="sm"
+                            >
+                              Learn More
+                            </ButtonLink>
+                          </div>
                         </div>
                       </article>
                     ))}

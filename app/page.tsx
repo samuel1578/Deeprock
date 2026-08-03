@@ -13,6 +13,7 @@ import { services } from '@/content/services';
 import { leadershipFeaturedPerson, leadershipCompanyDirectionStatement } from '@/content/leadership';
 import { getLatestArticles } from '@/content/news';
 import { BrandGlowText } from '@/components/ui/BrandGlowText';
+import { ServiceGlyph } from '@/components/icons/ServiceGlyph';
 
 export const metadata: Metadata = {
   title: 'DeepRock Mining Ltd — Responsible Gold Trading & Mining',
@@ -53,27 +54,39 @@ export default function HomePage() {
               {featuredServices.map((service) => (
                 <article
                   key={service.id}
-                  className="bg-white p-6 md:p-8 rounded-lg hover:shadow-lg transition-shadow flex h-full flex-col"
+                  className="group relative bg-white p-6 md:p-8 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 flex h-full flex-col overflow-hidden"
                 >
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-wide text-copper mb-3">
-                      {service.category}
-                    </p>
-                    <h3 className="font-display text-2xl text-basalt mb-3">
+                  {/* Geological Texture Layer */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 bg-[url('/images/patterns/deeprock-card-grid.svg')] bg-repeat bg-[length:260px_auto] opacity-[0.04] transition-opacity duration-300 group-hover:opacity-[0.08]"
+                  />
+
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="relative inline-block mb-6">
+                      {/* Copper Glow Effect */}
+                      <div className="absolute inset-0 bg-copper/20 blur-2xl rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                      <ServiceGlyph
+                        serviceSlug={service.slug}
+                        className="relative z-10 transition-transform duration-300 motion-safe:group-hover:rotate-[4deg] motion-safe:group-hover:scale-[1.04]"
+                      />
+                    </div>
+
+                    <h3 className="font-display text-2xl text-basalt mb-3 transition-colors duration-300 group-hover:text-copper">
                       {service.name}
                     </h3>
                     <p className="text-graphite mb-6 line-clamp-2">
                       {service.summary}
                     </p>
-                  </div>
-                  <div className="mt-auto pt-6">
-                    <ButtonLink
-                      href={`/services/${service.slug}`}
-                      variant="dark-pattern"
-                      size="sm"
-                    >
-                      Learn More
-                    </ButtonLink>
+                    <div className="mt-auto pt-6">
+                      <ButtonLink
+                        href={`/services/${service.slug}`}
+                        variant="dark-pattern"
+                        size="sm"
+                      >
+                        Learn More
+                      </ButtonLink>
+                    </div>
                   </div>
                 </article>
               ))}
@@ -110,7 +123,7 @@ export default function HomePage() {
                 <h3 className="font-display text-3xl mb-4">
                   {coreValuesContent.featured.title}
                 </h3>
-                <p className="text-clay">{coreValuesContent.featured.description}</p>
+                <p className="text-white/90">{coreValuesContent.featured.description}</p>
               </div>
 
               {/* Supporting Values */}
