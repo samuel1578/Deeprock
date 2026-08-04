@@ -167,37 +167,60 @@ export const responsibleOperationsContent = {
   ],
 };
 
+import type { ValueCardVariant } from '@/components/icons/value-icons'
+
+export interface ValueItem {
+  title: string
+  description: string
+  key: string
+  variant: ValueCardVariant
+}
+
 export const coreValuesContent = {
   eyebrow: 'OUR VALUES',
   heading: 'The Principles That Guide Our Work.',
   featured: {
     title: 'Integrity',
     description: 'We act honestly and protect the trust placed in our commercial and operational relationships.',
+    key: 'integrity',
+    variant: 'copper' as ValueCardVariant,
   },
   supporting: [
     {
       title: 'Transparency',
       description: 'We communicate clearly and support decisions with appropriate information.',
+      key: 'transparency',
+      variant: 'slate' as ValueCardVariant,
     },
     {
       title: 'Safety',
       description: 'We treat safe work and risk awareness as essential responsibilities.',
+      key: 'safety',
+      variant: 'copper' as ValueCardVariant,
     },
     {
       title: 'Excellence',
       description: 'We pursue disciplined execution, learning and continuous improvement.',
+      key: 'excellence',
+      variant: 'slate' as ValueCardVariant,
     },
     {
       title: 'Sustainability',
       description: 'We consider long-term environmental, social and commercial value.',
+      key: 'sustainability',
+      variant: 'copper' as ValueCardVariant,
     },
     {
       title: 'Accountability',
       description: 'We take responsibility for commitments, decisions and outcomes.',
+      key: 'accountability',
+      variant: 'slate' as ValueCardVariant,
     },
     {
       title: 'Customer Focus',
       description: 'We listen carefully and shape our engagement around legitimate partner needs.',
+      key: 'customer-focus',
+      variant: 'copper' as ValueCardVariant,
     },
   ],
 };

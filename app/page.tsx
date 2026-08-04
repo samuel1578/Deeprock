@@ -13,7 +13,9 @@ import { services } from '@/content/services';
 import { leadershipFeaturedPerson, leadershipCompanyDirectionStatement } from '@/content/leadership';
 import { getLatestArticles } from '@/content/news';
 import { BrandGlowText } from '@/components/ui/BrandGlowText';
-import { ServiceGlyph } from '@/components/icons/ServiceGlyph';
+import { ServiceGlyph } from '@/components/icons/ServiceGlyph'
+import { ValueGlyph } from '@/components/icons/ValueGlyph'
+import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'DeepRock Mining Ltd — Responsible Gold Trading & Mining',
@@ -113,27 +115,36 @@ export default function HomePage() {
             </div>
 
             <MobileValuesCarousel
-              featured={coreValuesContent.featured}
-              supporting={coreValuesContent.supporting}
+              values={[coreValuesContent.featured, ...coreValuesContent.supporting]}
             />
 
             <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Featured Value */}
-              <div className="md:col-span-2 lg:col-span-1 bg-copper text-white p-8 rounded-lg">
-                <h3 className="font-display text-3xl mb-4">
-                  {coreValuesContent.featured.title}
-                </h3>
-                <p className="text-white/90">{coreValuesContent.featured.description}</p>
-              </div>
-
-              {/* Supporting Values */}
-              {coreValuesContent.supporting.map((value) => (
-                <div key={value.title} className="bg-limestone p-6 rounded-lg">
-                  <h3 className="font-display text-xl text-basalt mb-3">
-                    {value.title}
-                  </h3>
-                  <p className="text-graphite text-sm">{value.description}</p>
-                </div>
+              {[coreValuesContent.featured, ...coreValuesContent.supporting].map((value) => (
+                <article
+                  key={value.key}
+                  className={cn(
+                    'group p-8 rounded-lg flex flex-col transition-all duration-300 hover:shadow-lg',
+                    value.variant === 'copper' ? 'bg-copper text-white' : 'bg-slate-card text-white'
+                  )}
+                >
+                  <div className="flex items-start gap-4 mb-4">
+                    <ValueGlyph
+                      valueKey={value.key}
+                      variant={value.variant}
+                    />
+                    <h3 className="font-display text-white text-2xl lg:text-[26px] leading-tight pt-1">
+                      {value.title}
+                    </h3>
+                  </div>
+                  <p
+                    className={cn(
+                      'text-base leading-relaxed',
+                      value.variant === 'copper' ? 'text-white/90' : 'text-white/85'
+                    )}
+                  >
+                    {value.description}
+                  </p>
+                </article>
               ))}
             </div>
           </Stack>
