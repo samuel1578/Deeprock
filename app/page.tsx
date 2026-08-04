@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { HeroCarousel } from '@/components/sections/HeroCarousel';
 import { CompanyIntroSection } from '@/components/sections/CompanyIntroSection';
+import { GoldPriceSection } from '@/components/sections/home/GoldPriceSection';
 import { MobileServicesCarousel } from '@/components/sections/home/MobileServicesCarousel';
 import { MobileValuesCarousel } from '@/components/sections/home/MobileValuesCarousel';
 import { MobileNewsCarousel } from '@/components/sections/home/MobileNewsCarousel';
@@ -33,6 +34,9 @@ export default function HomePage() {
 
       {/* Company Introduction */}
       <CompanyIntroSection />
+
+      {/* Gold Price Section */}
+      <GoldPriceSection />
 
       {/* Services Overview */}
       <Section className="bg-limestone">
