@@ -225,6 +225,12 @@ export const coreValuesContent = {
   ],
 };
 
+export const galleryContent = {
+  eyebrow: 'GALLERY',
+  heading: 'A Closer Look at Our Operations.',
+  summary: 'A visual record of DeepRock\'s trading, aggregation and mining activity across Ghana.',
+};
+
 export const partnershipCTAContent = {
   heading: 'Build the Next Opportunity with DeepRock Co. Ltd',
   body: 'Speak with our team about gold trading, aggregation partnerships, mining operations, exploration or technical support.',

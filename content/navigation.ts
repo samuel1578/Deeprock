@@ -89,8 +89,8 @@ export const primaryNavigation: NavMenu[] = [
     ],
   },
   {
-    label: 'News & Insights',
-    href: '/news',
+    label: 'Gallery',
+    href: '/#gallery',
   },
   {
     label: 'Contact Us',

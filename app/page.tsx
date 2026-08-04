@@ -4,15 +4,13 @@ import { CompanyIntroSection } from '@/components/sections/CompanyIntroSection';
 import { GoldPriceSection } from '@/components/sections/home/GoldPriceSection';
 import { MobileServicesCarousel } from '@/components/sections/home/MobileServicesCarousel';
 import { MobileValuesCarousel } from '@/components/sections/home/MobileValuesCarousel';
-import { MobileNewsCarousel } from '@/components/sections/home/MobileNewsCarousel';
+import { GallerySection } from '@/components/sections/home/GallerySection';
 import { Container, Section, Stack, Inline } from '@/components/layout/Container';
 import { ButtonLink } from '@/components/ui/Button';
-import { TextLink } from '@/components/ui/TextLink';
 import { ImageWithFallback } from '@/components/media/ImageWithFallback';
 import { heroSlides, companyIntroductionContent, partnershipCTAContent, coreValuesContent } from '@/content/homepage';
 import { services } from '@/content/services';
 import { leadershipFeaturedPerson, leadershipCompanyDirectionStatement } from '@/content/leadership';
-import { getLatestArticles } from '@/content/news';
 import { BrandGlowText } from '@/components/ui/BrandGlowText';
 import { ServiceGlyph } from '@/components/icons/ServiceGlyph'
 import { ValueGlyph } from '@/components/icons/ValueGlyph'
@@ -25,7 +23,6 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const featuredServices = services.slice(0, 4);
-  const latestNews = getLatestArticles(3);
 
   return (
     <>
@@ -198,58 +195,8 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* Latest News */}
-      {latestNews.length > 0 && (
-        <Section className="bg-limestone">
-          <Container variant="wide">
-            <Stack gap="xl">
-              <div className="max-w-2xl">
-                <p className="text-sm font-medium uppercase tracking-wide text-copper mb-4">
-                  INSIGHTS
-                </p>
-                <h2 className="font-display text-4xl md:text-5xl text-basalt">
-                  Latest News & Insights
-                </h2>
-              </div>
-
-              <MobileNewsCarousel articles={latestNews} />
-
-              <div className="hidden md:grid md:grid-cols-3 gap-6">
-                {latestNews.map((article) => (
-                  <a
-                    key={article.id}
-                    href={`/news/${article.slug}`}
-                    className="group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
-                  >
-                    <div className="aspect-video bg-stone overflow-hidden">
-                      <img
-                        src={article.image}
-                        alt={article.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <p className="text-xs font-medium uppercase tracking-wide text-copper mb-2">
-                        {article.category}
-                      </p>
-                      <h3 className="font-display text-xl text-basalt mb-2 line-clamp-2">
-                        {article.title}
-                      </h3>
-                      <p className="text-sm text-graphite line-clamp-2">
-                        {article.excerpt}
-                      </p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-
-              <TextLink href="/news" className="text-base">
-                View all insights
-              </TextLink>
-            </Stack>
-          </Container>
-        </Section>
-      )}
+      {/* Gallery */}
+      <GallerySection />
 
       {/* Partnership CTA */}
       <Section className="bg-copper text-white">
@@ -269,12 +216,13 @@ export default function HomePage() {
               >
                 {partnershipCTAContent.primaryCTA.label}
               </ButtonLink>
-              <a
+              <ButtonLink
                 href={partnershipCTAContent.secondaryCTA.href}
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white hover:text-clay transition-colors"
+                variant="dark-pattern"
+                size="lg"
               >
                 {partnershipCTAContent.secondaryCTA.label}
-              </a>
+              </ButtonLink>
             </Inline>
           </Stack>
         </Container>

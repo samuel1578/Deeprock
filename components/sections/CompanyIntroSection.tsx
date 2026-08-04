@@ -6,7 +6,7 @@ import { ImageWithFallback } from '@/components/media/ImageWithFallback'
 import { ButtonLink } from '@/components/ui/Button'
 import { BrandGlowText } from '@/components/ui/BrandGlowText'
 import { companyIntroductionContent } from '@/content/homepage'
-import { ShieldCheck } from 'lucide-react'
+import { SealCheck } from '@phosphor-icons/react'
 
 export function CompanyIntroSection() {
   const [leadText, ...supportingText] = companyIntroductionContent.body.split('\n\n')
@@ -106,11 +106,20 @@ export function CompanyIntroSection() {
               {/* Trust Indicator */}
               <div className="flex flex-col items-start gap-4">
                   <div className="flex items-center gap-3 py-2 px-4 bg-limestone/50 rounded-full border border-limestone">
-                      <ShieldCheck className="w-5 h-5 text-copper" />
+                      <SealCheck className="w-6 h-6 text-copper shrink-0" weight="bold" aria-hidden="true" />
                       <span className="text-sm font-semibold tracking-wider text-basalt/80">
                           Ghana Licensed Aggregator
                       </span>
                   </div>
+
+                  <a
+                      href="https://goldbod.gov.gh/license-registry/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-medium text-copper underline decoration-copper/40 underline-offset-4 hover:decoration-copper hover:text-copper-hover transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 rounded-sm"
+                  >
+                      Verify
+                  </a>
               </div>
 
               {/* CTA */}
