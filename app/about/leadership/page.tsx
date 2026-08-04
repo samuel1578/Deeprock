@@ -35,9 +35,11 @@ export default function LeadershipPage() {
                   <ImageWithFallback
                     src={member.image}
                     alt={member.name}
-                    width={400}
-                    height={500}
+                    width={900}
+                    height={1200}
                     category="Team"
+                    objectFit="contain"
+                    layout="intrinsic"
                     className="mb-6 rounded-lg"
                   />
                   <h3 className="font-display text-xl text-basalt mb-1 font-bold">

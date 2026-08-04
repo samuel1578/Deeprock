@@ -169,9 +169,9 @@ export default function HomePage() {
               <p className="text-lg text-black">
                 {leadershipCompanyDirectionStatement}
               </p>
-              <TextLink href="/about/leadership" className="text-copper">
+              <ButtonLink href="/about/leadership" variant="primary">
                 Meet the team
-              </TextLink>
+              </ButtonLink>
             </Stack>
 
             {leadershipFeaturedPerson && (
@@ -179,9 +179,11 @@ export default function HomePage() {
                 <ImageWithFallback
                   src={leadershipFeaturedPerson.image}
                   alt={leadershipFeaturedPerson.name}
-                  width={500}
-                  height={600}
+                  width={900}
+                  height={1200}
                   category="Team"
+                  objectFit="contain"
+                  layout="intrinsic"
                   className="rounded-lg mb-6"
                 />
                 <h3 className="font-display text-2xl text-basalt mb-1 font-bold">

@@ -15,6 +15,7 @@ interface ImageWithFallbackProps {
   priority?: boolean
   sizes?: string
   aspectRatio?: 'auto' | '16/9' | '4/3' | '3/2' | '1/1' | '21/9'
+  layout?: 'fill' | 'intrinsic'
 }
 
 export function ImageWithFallback({
@@ -29,8 +30,11 @@ export function ImageWithFallback({
   priority = false,
   sizes,
   aspectRatio = 'auto',
+  layout = 'fill',
 }: ImageWithFallbackProps) {
   const [imageError, setImageError] = useState(false)
+
+  const isIntrinsic = layout === 'intrinsic'
 
   const aspectRatioMap: Record<string, string> = {
     auto: `${width} / ${height}`,
@@ -47,9 +51,7 @@ export function ImageWithFallback({
     return (
       <div
         className={`bg-gradient-to-br from-basalt to-slate flex items-center justify-center ${className}`}
-        style={{
-          aspectRatio: computedAspectRatio,
-        }}
+        style={!isIntrinsic ? { aspectRatio: computedAspectRatio } : undefined}
       >
         <div className="text-center">
           <p className="text-limestone text-sm font-medium">DeepRock</p>
@@ -63,21 +65,16 @@ export function ImageWithFallback({
 
   return (
     <div
-      className={`relative overflow-hidden ${className}`}
-      style={{
-        aspectRatio: computedAspectRatio,
-      }}
+      className={`relative ${isIntrinsic ? '' : 'overflow-hidden'} ${className}`}
+      style={!isIntrinsic ? { aspectRatio: computedAspectRatio } : undefined}
     >
       <Image
         src={src}
         alt={alt}
         width={width}
         height={height}
-        className="w-full h-full object-cover"
-        style={{
-          objectFit,
-          objectPosition,
-        }}
+        className={`w-full ${isIntrinsic ? 'h-auto object-contain' : 'h-full object-cover'}`}
+        style={isIntrinsic ? undefined : { objectFit, objectPosition }}
         onError={() => setImageError(true)}
         priority={priority}
         sizes={sizes}
