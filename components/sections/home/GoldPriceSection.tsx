@@ -14,6 +14,10 @@ export async function GoldPriceSection() {
         error = 'Market price temporarily unavailable'
     }
 
+    if (marketData === null && error === null) {
+        error = 'Market price temporarily unavailable'
+    }
+
     return (
         <Section className="bg-white py-12 md:py-24">
             <Container variant="wide">

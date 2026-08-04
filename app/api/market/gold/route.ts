@@ -6,8 +6,19 @@ export async function GET() {
     try {
         const data = await fetchGoldMarketData()
 
+        if (!data) {
+            const errorResponse: GoldMarketApiResponse = {
+                error: {
+                    code: 'GOLD_MARKET_UNAVAILABLE',
+                    message: 'Gold market data is temporarily unavailable.',
+                },
+            }
+
+            return NextResponse.json(errorResponse, { status: 503 })
+        }
+
         const response: GoldMarketApiResponse = {
-            data
+            data,
         }
 
         return NextResponse.json(response)
@@ -17,8 +28,8 @@ export async function GET() {
         const errorResponse: GoldMarketApiResponse = {
             error: {
                 code: 'GOLD_MARKET_UNAVAILABLE',
-                message: 'Gold market data is temporarily unavailable.'
-            }
+                message: 'Gold market data is temporarily unavailable.',
+            },
         }
 
         return NextResponse.json(errorResponse, { status: 503 })

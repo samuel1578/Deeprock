@@ -25,7 +25,7 @@ function isValidGoldApiResponse(data: unknown): data is GoldApiResponse {
     )
 }
 
-export async function fetchGoldMarketData(): Promise<GoldMarketData> {
+export async function fetchGoldMarketData(): Promise<GoldMarketData | null> {
     const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS)
 
@@ -69,6 +69,11 @@ export async function fetchGoldMarketData(): Promise<GoldMarketData> {
             source: 'Gold-API.com',
             freshness,
         }
+    } catch (error) {
+        if (error instanceof DOMException && error.name === 'AbortError') {
+            return null
+        }
+        throw error
     } finally {
         clearTimeout(timeoutId)
     }

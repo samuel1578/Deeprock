@@ -2,7 +2,7 @@
 // Global company and contact information
 
 export const siteConfig = {
-  name: 'DeepRock Mining Ltd',
+  name: 'DeepRock Co. Ltd',
   shortName: 'DeepRock',
   description: 'DeepRock Mining Ltd is a wholly Ghanaian precious minerals trading and mining company focused on responsible gold buying, aggregation, mining and technical services.',
   tagline: 'Responsible Gold Trading. Sustainable Mining. Lasting Value.',
@@ -14,9 +14,9 @@ export const companyContact = {
   phoneLink: 'tel:+233541703325',
   email: 'Deeprockmining.gh@gmail.com',
   emailLink: 'mailto:Deeprockmining.gh@gmail.com',
-  address: 'The Emporium, 3rd Floor, Mövenpick Ambassador Hotel, Independence Avenue, Ridge, Accra, Ghana',
+  address: 'The Emporium, 3rd Floor, M&ouml;venpick Ambassador Hotel, Independence Avenue, Ridge, Accra, Ghana',
   postalAddress: 'P.O. Box CT 3621, Cantonments, Accra',
-  location: 'The Emporium, 3rd Floor, Mövenpick Ambassador Hotel, Independence Avenue, Ridge, Accra, Ghana',
+  location: 'The Emporium, 3rd Floor, M&ouml;venpick Ambassador Hotel, Independence Avenue, Ridge, Accra, Ghana',
   locationLink: '/contact',
 } as const;
 
@@ -37,4 +37,4 @@ export const coreValues = [
   'Customer Focus',
 ] as const;
 
-export const footerStatement = 'DeepRock Mining Ltd is a wholly Ghanaian company focused on responsible precious minerals trading, gold aggregation, mining operations and technical support services.';
+export const footerStatement = 'DeepRock Co. Ltd is a wholly Ghanaian company focused on responsible precious minerals trading, gold aggregation, mining operations and technical support services.';

@@ -27,7 +27,7 @@ export const heroSlides: HeroSlide[] = [
     number: 1,
     eyebrow: 'Ghanaian-owned. Responsibility-led.',
     heading: 'Responsible Gold Trading. Sustainable Mining. Lasting Value.',
-    summary: 'DeepRock connects precious minerals trading, aggregation and responsible mining services through transparent commercial relationships.',
+    summary: 'DeepRock Co. Ltd connects precious minerals trading, aggregation and responsible mining services through transparent commercial relationships.',
     primaryCTA: {
       label: 'Explore Our Services',
       href: '/services',
@@ -111,7 +111,7 @@ export const heroSlides: HeroSlide[] = [
 
 export const companyIntroductionContent = {
   heading: 'Responsible Trading. Capable Operations. Long-Term Value.',
-  body: 'DeepRock Mining Ltd specialises in precious minerals trading, particularly the buying and selling of gold, as well as responsible mining operations under a self-financing Aggregator Licence. Our work includes sourcing, purchasing, aggregating and marketing gold while supporting sustainable mining and technical activities.\n\nWe work closely with licensed small-scale miners, mining communities, investors, technical partners and institutions. Our aim is to provide reliable market access and responsible service solutions while operating with integrity, transparency and respect for applicable requirements.',
+  body: 'DeepRock Co. Ltd specialises in precious minerals trading, particularly the buying and selling of gold, as well as responsible mining operations under a self-financing Aggregator Licence. Our work includes sourcing, purchasing, aggregating and marketing gold while supporting sustainable mining and technical activities.\n\nWe work closely with licensed small-scale miners, mining communities, investors, technical partners and institutions. Our aim is to provide reliable market access and responsible service solutions while operating with integrity, transparency and respect for applicable requirements.',
   image: '/images/home/company/company-overview.jpeg',
 };
 
@@ -124,7 +124,7 @@ export const servicesOverviewContent = {
 export const aggregationFeatureContent = {
   eyebrow: 'GOLD AGGREGATION',
   heading: 'Dependable Market Access Begins with Responsible Partnership.',
-  body: 'Through its self-financing aggregation model, DeepRock works with licensed small-scale miners and mining communities to support responsible gold sourcing, purchasing and aggregation. Our focus is clear communication, commercial reliability and relationships designed for long-term value.',
+  body: 'Through its self-financing aggregation model, DeepRock Co. Ltd works with licensed small-scale miners and mining communities to support responsible gold sourcing, purchasing and aggregation. Our focus is clear communication, commercial reliability and relationships designed for long-term value.',
   steps: [
     {
       number: '01',
@@ -226,7 +226,7 @@ export const coreValuesContent = {
 };
 
 export const partnershipCTAContent = {
-  heading: 'Build the Next Opportunity with DeepRock.',
+  heading: 'Build the Next Opportunity with DeepRock Co. Ltd',
   body: 'Speak with our team about gold trading, aggregation partnerships, mining operations, exploration or technical support.',
   primaryCTA: {
     label: 'Partner With Us',

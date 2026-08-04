@@ -52,11 +52,11 @@ export const leadershipTeam: LeadershipMember[] = [
   },
 ];
 
-export const leadershipIntroduction = 'DeepRock Mining Ltd is led by professionals responsible for trading, operations, exploration, finance, health and safety, environmental management and business development. The current profile supplies names and roles only; biographies and personal statements remain client dependencies.';
+export const leadershipIntroduction = 'DeepRock Co. Ltd is led by professionals responsible for trading, operations, exploration, finance, health and safety, environmental management and business development. The current profile supplies names and roles only; biographies and personal statements remain client dependencies.';
 
 export const leadershipFeatureHeading = 'Experienced Leadership Across Trading, Operations and Technical Services.';
 
-export const leadershipFeatureBody = 'DeepRock is led by professionals with responsibilities spanning precious minerals trading, mining operations, exploration, finance, health and safety, environmental management and business development.';
+export const leadershipFeatureBody = 'DeepRock Co. Ltd is led by professionals with responsibilities spanning precious minerals trading, mining operations, exploration, finance, health and safety, environmental management and business development.';
 
 export const leadershipFeaturedPerson = leadershipTeam[0];
 
