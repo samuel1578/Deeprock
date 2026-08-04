@@ -50,6 +50,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         eyebrow={article.category}
         title={article.title}
         summary={article.excerpt}
+        image={article.image}
+        imageAlt={article.title}
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'News', href: '/news' },
