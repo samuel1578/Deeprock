@@ -4,6 +4,11 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import { GoldMarketData, GoldMarketApiResponse } from '@/lib/market/gold-types'
 import { ChartLineUp } from '@phosphor-icons/react'
 import { cn } from '@/lib/utils'
+import { StaggerReveal, StaggerItem } from '@/components/motion/StaggerReveal'
+import {
+  homepageHeadingVariants,
+  homepageBodyVariants,
+} from '@/components/motion/motion-tokens'
 
 interface GoldPriceLiveRegionProps {
     initialData: GoldMarketData | null
@@ -134,49 +139,57 @@ export function GoldPriceLiveRegion({ initialData, initialError }: GoldPriceLive
     if (!data) return null
 
     return (
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 relative">
+        <StaggerReveal
+            className="flex flex-col md:flex-row md:items-end justify-between gap-8 relative"
+            staggerBy={0.09}
+            delayChildren={0.14}
+        >
             {/* Accessibility Live Region */}
             <div aria-live="polite" className="sr-only">
                 Gold market price updated to {ounceFormatter.format(data.ouncePrice)} per ounce.
             </div>
 
             <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                    <ChartLineUp size={40} weight="duotone" className={cn("text-copper transition-opacity duration-300", isRefreshing && "opacity-50")} aria-hidden="true" />
-                    <div>
-                        <p className="text-xs font-medium uppercase tracking-widest text-white/50 mb-1">
-                            XAU / USD
-                        </p>
-                        <p className="font-display text-5xl md:text-6xl text-white tabular-nums">
-                            {ounceFormatter.format(data.ouncePrice)}
-                        </p>
-                    </div>
-                </div>
-
-                <div className="flex flex-wrap gap-x-8 gap-y-2 pt-4 border-t border-white/10">
-                    <div>
-                        <p className="text-[10px] font-medium uppercase tracking-widest text-white/40 mb-1">
-                            Price per Gram
-                        </p>
-                        <p className="text-xl font-medium text-white/90 tabular-nums">
-                            {gramFormatter.format(data.gramPrice)}
-                        </p>
-                    </div>
-                    <div>
-                        <p className="text-[10px] font-medium uppercase tracking-widest text-white/40 mb-1">
-                            Market Status
-                        </p>
-                        <div className="flex items-center gap-2">
-                            <span className={cn("w-2 h-2 rounded-full transition-colors duration-500", statusColor)} />
-                            <span className="text-sm font-medium text-white/80 capitalize">
-                                {statusLabel}
-                            </span>
+                <StaggerItem variants={homepageHeadingVariants}>
+                    <div className="flex items-center gap-4">
+                        <ChartLineUp size={40} weight="duotone" className={cn("text-copper transition-opacity duration-300", isRefreshing && "opacity-50")} aria-hidden="true" />
+                        <div>
+                            <p className="text-xs font-medium uppercase tracking-widest text-white/50 mb-1">
+                                XAU / USD
+                            </p>
+                            <p className="font-display text-5xl md:text-6xl text-white tabular-nums">
+                                {ounceFormatter.format(data.ouncePrice)}
+                            </p>
                         </div>
                     </div>
-                </div>
+                </StaggerItem>
+
+                <StaggerItem variants={homepageBodyVariants}>
+                    <div className="flex flex-wrap gap-x-8 gap-y-2 pt-4 border-t border-white/10">
+                        <div>
+                            <p className="text-[10px] font-medium uppercase tracking-widest text-white/40 mb-1">
+                                Price per Gram
+                            </p>
+                            <p className="text-xl font-medium text-white/90 tabular-nums">
+                                {gramFormatter.format(data.gramPrice)}
+                            </p>
+                        </div>
+                        <div>
+                            <p className="text-[10px] font-medium uppercase tracking-widest text-white/40 mb-1">
+                                Market Status
+                            </p>
+                            <div className="flex items-center gap-2">
+                                <span className={cn("w-2 h-2 rounded-full transition-colors duration-500", statusColor)} />
+                                <span className="text-sm font-medium text-white/80 capitalize">
+                                    {statusLabel}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </StaggerItem>
             </div>
 
-            <div className="text-left md:text-right space-y-1">
+            <StaggerItem variants={homepageBodyVariants} className="text-left md:text-right space-y-1">
                 <p className="text-[10px] font-medium uppercase tracking-widest text-white/30">
                     Last Updated
                 </p>
@@ -186,7 +199,7 @@ export function GoldPriceLiveRegion({ initialData, initialError }: GoldPriceLive
                 <p className="text-[9px] text-white/20 pt-2">
                     Source: {data.source}
                 </p>
-            </div>
-        </div>
+            </StaggerItem>
+        </StaggerReveal>
     )
 }

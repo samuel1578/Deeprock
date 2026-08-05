@@ -2,6 +2,15 @@ import { Container, Section, Stack } from '@/components/layout/Container'
 import { fetchGoldMarketData } from '@/lib/market/gold-api'
 import { GoldPriceLiveRegion } from '@/components/market/GoldPriceLiveRegion'
 import { GoldBarDecoration } from '@/components/market/GoldBarDecoration'
+import { Reveal } from '@/components/motion/Reveal'
+import { StaggerReveal, StaggerItem } from '@/components/motion/StaggerReveal'
+import {
+  homepageEyebrowVariants,
+  homepageHeadingVariants,
+  homepageBodyVariants,
+  cardRevealVariants,
+  fadeUpVariants,
+} from '@/components/motion/motion-tokens'
 
 export async function GoldPriceSection() {
     let marketData = null
@@ -22,21 +31,33 @@ export async function GoldPriceSection() {
         <Section className="bg-white py-12 md:py-24">
             <Container variant="wide">
                 <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8 lg:gap-12 items-center">
-                    <Stack gap="sm">
-                        <div>
-                            <p className="text-sm font-medium uppercase tracking-widest text-copper mb-3">
-                                GOLD MARKET
-                            </p>
-                            <h2 className="font-display text-4xl md:text-5xl text-basalt mb-4 lg:mb-6">
-                                Indicative Gold Market Price
-                            </h2>
-                            <p className="text-graphite/80 max-w-md text-sm md:text-base">
-                                Real-time indicative prices provided for informational purposes. Market values are sourced from independent third-party providers.
-                            </p>
-                        </div>
-                    </Stack>
+                    <StaggerReveal staggerBy={0.09} delayChildren={0.04}>
+                        <Stack gap="sm">
+                            <div>
+                                <StaggerItem variants={homepageEyebrowVariants}>
+                                    <p className="text-sm font-medium uppercase tracking-widest text-copper mb-3">
+                                        GOLD MARKET
+                                    </p>
+                                </StaggerItem>
+                                <StaggerItem variants={homepageHeadingVariants}>
+                                    <h2 className="font-display text-4xl md:text-5xl text-basalt mb-4 lg:mb-6">
+                                        Indicative Gold Market Price
+                                    </h2>
+                                </StaggerItem>
+                                <StaggerItem variants={homepageBodyVariants}>
+                                    <p className="text-graphite/80 max-w-md text-sm md:text-base">
+                                        Real-time indicative prices provided for informational purposes. Market values are sourced from independent third-party providers.
+                                    </p>
+                                </StaggerItem>
+                            </div>
+                        </Stack>
+                    </StaggerReveal>
 
-                    <div className="relative">
+                    <Reveal
+                        className="relative"
+                        variants={cardRevealVariants}
+                        mobileVariants={fadeUpVariants}
+                    >
                         {/* Decorative Pattern */}
                         <div
                             aria-hidden="true"
@@ -50,7 +71,7 @@ export async function GoldPriceSection() {
                                 <GoldPriceLiveRegion initialData={marketData} initialError={error} />
                             </div>
                         </div>
-                    </div>
+                    </Reveal>
                 </div>
             </Container>
         </Section>

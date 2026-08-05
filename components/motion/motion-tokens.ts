@@ -163,3 +163,77 @@ export const mobileCardVariants: Variants = {
     },
   },
 }
+
+// --- Homepage section rhythm (Sprint 16) -----------------------------------
+// Named homepage variants plus aliases that intentionally reuse existing
+// definitions rather than duplicating near-identical variants.
+
+export const homepageSectionVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 32,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.78,
+      ease: motionEase,
+    },
+  },
+}
+
+export const homepageImageVariants = imageRevealVariants
+
+export const homepageCardVariants = valueCardVariants
+
+export const homepageEyebrowVariants: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: motionEase },
+  },
+}
+
+export const homepageHeadingVariants: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: motionEase },
+  },
+}
+
+export const homepageBodyVariants: Variants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.62, ease: motionEase },
+  },
+}
+
+export const homepageCtaVariants: Variants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: motionEase },
+  },
+}
+
+export const homepageGalleryImageVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.985,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.68,
+      ease: motionEase,
+    },
+  },
+}

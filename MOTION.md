@@ -147,3 +147,57 @@ sticky animation scenes, and RAF-based page-scroll loops. All motion is
 6. Run `pnpm exec tsc --noEmit` and `pnpm build`.
 7. Visually verify 375 / 390 / 430 / 768 / 1024 / 1440 px, plus reduced-motion,
    slow/fast scroll, touch swipe, keyboard nav, and hidden-tab return.
+
+## Homepage section rhythm (Sprint 16)
+
+Shared tokens added to `components/motion/motion-tokens.ts` — no duplicate
+variant definitions, only the genuinely-new ones plus aliases that reuse
+existing variants:
+
+- `homepageSectionVariants` — `opacity 0→1`, `y 32→0`, 0.78s (card/section rise).
+- `homepageImageVariants` — alias of `imageRevealVariants` (`x 36`, `scale 0.985→1`, 0.82s).
+- `homepageCardVariants` — alias of `valueCardVariants` (`y 24`, `scale 0.99→1`, 0.62s).
+- `homepageEyebrowVariants` — `y 12`, 0.5s.
+- `homepageHeadingVariants` — `y 24`, 0.7s.
+- `homepageBodyVariants` — `y 18`, 0.62s.
+- `homepageCtaVariants` — `y 16`, 0.55s.
+- `homepageGalleryImageVariants` — `opacity 0→1`, `scale 0.985→1`, 0.68s (Swiper owns horizontal movement).
+
+### Observer map (one per logical group)
+
+- Company Intro → `StaggerReveal` (all copy) + `Reveal` (image). No local variants.
+- Gold Price → `StaggerReveal` (intro copy) + `Reveal` (card shell) +
+  `StaggerReveal` (price group inside `GoldPriceLiveRegion`). The independent
+  gold-bar drift in `GoldBarDecoration` is untouched (time-based, not scroll-
+  linked) and the price refresh interval is untouched.
+- Services → `StaggerReveal` (intro) + `Reveal` (mobile carousel, `md:hidden`) +
+  `StaggerReveal` (desktop grid) + `Reveal` (CTA). Tailwind hover effects on the
+  cards are preserved, not re-implemented in Motion.
+- Values → `StaggerReveal` (intro) + `MobileValuesCarousel animated` +
+  `StaggerReveal` (desktop grid). The mobile carousel keeps its 2+2+2+1 grouping
+  and Swiper ownership; the desktop grid keeps its copper/slate color sequence.
+- Leadership → paired reveal: left text column = `Reveal(fadeLeftVariants,
+  mobileVariants=fadeUpVariants)` wrapping a `StaggerReveal`; right portrait =
+  `Reveal(homepageImageVariants, +16px delay)` wrapping the `ImageWithFallback`
+  (`objectFit="contain"`, `layout="intrinsic"`) plus a `StaggerReveal` caption.
+  The section carries `overflow-x-clip` to contain the +36px entrance.
+- Gallery → `StaggerReveal` (intro) + `Reveal` (frame) wrapping a single
+  `StaggerReveal` (Swiper + nav). Each slide's media is a `StaggerItem
+  className="absolute inset-0"` using `homepageGalleryImageVariants`; variants
+  propagate through Swiper's DOM via Motion context, so the whole frame shares
+  one observer (no per-slide observers). Swiper config and touch interaction are
+  unchanged.
+- Partnership CTA → one `StaggerReveal` (heading → body → two buttons).
+
+### Wrapper rules discovered during implementation
+
+- A `StaggerItem` wrapping a grid card must be `h-full` and the inner `<article>`
+  must also be `h-full` to preserve equal-height cards (matches the MVV page).
+- A `Reveal`/`StaggerItem` wrapping a `ButtonLink` (which is `inline-flex` inside
+  a `Stack` `flex flex-col`) must itself be `flex flex-col` so the button keeps
+  its original full-width stretch.
+- A `StaggerItem` wrapping a Swiper `GalleryImage` (which renders
+  `absolute inset-0`) must be `absolute inset-0` itself so the image keeps its
+  containing block.
+- Horizontal entrances (`fadeLeftVariants`, `homepageImageVariants`) get
+  `mobileVariants={fadeUpVariants}` to avoid horizontal overflow on small screens.
