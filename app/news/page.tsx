@@ -5,7 +5,7 @@ import { newsArticles, newsListingIntro } from '@/content/news';
 
 export const metadata: Metadata = {
   title: 'News & Insights',
-  description: 'DeepRock Mining Ltd provides perspectives and practical insights on responsible gold trading, mining operations, safety and sustainability.',
+  description: 'Deep Rock Mining Ltd provides perspectives and practical insights on responsible gold trading, mining operations, safety and sustainability.',
 };
 
 export default function NewsPage() {

@@ -1,88 +1,107 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { Fragment, useMemo } from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { useState, useEffect } from 'react'
+import {
+  createHighlightPattern,
+  defaultBrandHighlights,
+} from '@/lib/brand-highlight'
 
 interface BrandGlowTextProps {
-  children: React.ReactNode;
-  className?: string;
+  text?: string
+  highlights?: readonly string[]
+  animate?: boolean
+  className?: string
+  children?: React.ReactNode
 }
 
-function useMediaQuery(query: string): boolean {
-  const [matches, setMatches] = useState(false);
+export function BrandGlowText({
+  text,
+  children,
+  highlights = defaultBrandHighlights,
+  animate = true,
+  className,
+}: BrandGlowTextProps) {
+  const prefersReducedMotion = useReducedMotion()
 
-  useEffect(() => {
-    const media = window.matchMedia(query);
-    if (media.matches !== matches) {
-      setMatches(media.matches);
+  const sourceText =
+    typeof text === 'string'
+      ? text
+      : typeof children === 'string'
+        ? children
+        : ''
+
+  if (!sourceText) {
+    if (children && typeof children !== 'string') {
+      return <>{children}</>
     }
-
-    const listener = () => setMatches(media.matches);
-    media.addEventListener('change', listener);
-    return () => media.removeEventListener('change', listener);
-  }, [matches, query]);
-
-  return matches;
-}
-
-export function BrandGlowText({ children, className }: BrandGlowTextProps) {
-  const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
-
-  if (typeof children !== 'string') {
-    // This component is designed to work on strings.
-    // If children is not a string, we can't process it.
-    return <>{children}</>;
+    return null
   }
 
-  const regex = /(DeepRock(?:['’]s)?(?:\s+Mining\s+(?:Ltd\.?|Limited))?)/gi;
-  const parts = children.split(regex);
+  const pattern = useMemo(
+    () => createHighlightPattern(highlights),
+    [highlights],
+  )
 
-  if (parts.length <= 1) {
-    return <>{children}</>;
-  }
+  const highlightSet = useMemo(
+    () => new Set(highlights.map((item) => item.toLowerCase())),
+    [highlights],
+  )
+
+  const parts = sourceText.split(pattern)
 
   return (
     <>
       {parts.map((part, index) => {
-        if (index % 2 === 1) { // This is a match
+        const isHighlighted = highlightSet.has(part.toLowerCase())
+
+        if (!isHighlighted) {
+          return (
+            <Fragment key={`${part}-${index}`}>
+              {part}
+            </Fragment>
+          )
+        }
+
+        const classes = cn(
+          'inline align-baseline leading-[inherit]',
+          'font-semibold tracking-[-0.015em]',
+          'text-[#f26522]',
+          className,
+        )
+
+        const style = {
+          textShadow:
+            '0 0 8px rgba(242, 101, 34, 0.3), 0 0 18px rgba(242, 101, 34, 0.12)',
+        }
+
+        if (!animate || prefersReducedMotion) {
           return (
             <span
-              key={index}
-              className={cn(
-                'relative inline-block font-semibold tracking-[-0.015em] text-[#f26522]',
-                className
-              )}
-              style={{
-                textShadow:
-                  '0 0 8px rgba(242, 101, 34, 0.3), 0 0 18px rgba(242, 101, 34, 0.12)',
-              }}
+              key={`${part}-${index}`}
+              className={classes}
+              style={style}
             >
-              {prefersReducedMotion ? (
-                part
-              ) : (
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className="relative inline-block overflow-hidden"
-                >
-                  {part}
-                  <motion.span
-                    className="absolute inset-0 -skew-x-12 bg-white/20"
-                    initial={{ x: '-150%' }}
-                    whileInView={{ x: '150%' }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.2, ease: [0.6, 0.01, -0.05, 0.95], delay: 0.2 }}
-                  />
-                </motion.span>
-              )}
+              {part}
             </span>
-          );
+          )
         }
-        return part;
+
+        return (
+          <motion.span
+            key={`${part}-${index}`}
+            className={classes}
+            style={style}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            {part}
+          </motion.span>
+        )
       })}
     </>
-  );
+  )
 }

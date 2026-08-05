@@ -64,9 +64,7 @@ export default function GalleryPage() {
                 A Closer Look at Our Operations.
               </h1>
               <p className="mt-6 text-lg text-graphite">
-                <BrandGlowText>
-                  A visual record of DeepRock&apos;s trading, aggregation and mining activity across Ghana.
-                </BrandGlowText>
+                <BrandGlowText text="A visual record of Deep Rock's trading, aggregation and mining activity across Ghana." />
               </p>
             </motion.div>
 

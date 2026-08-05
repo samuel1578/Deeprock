@@ -25,7 +25,7 @@ export function GalleryImage({ image, sizes, priority = false, className = '' }:
         className="flex h-full w-full items-center justify-center bg-gradient-to-br from-basalt to-slate p-6 text-center"
       >
         <div>
-          <p className="text-limestone text-sm font-medium">DeepRock</p>
+          <p className="text-limestone text-sm font-medium">Deep Rock</p>
           <p className="mx-auto mt-1 max-w-[220px] truncate text-xs text-stone">
             {image.caption ?? 'Gallery image'}
           </p>

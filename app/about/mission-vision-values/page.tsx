@@ -16,7 +16,7 @@ import {
 
 export const metadata: Metadata = {
   title: 'Mission, Vision & Values',
-  description: 'DeepRock Mining Ltd is guided by a clear vision, a focused mission and core values that place responsibility alongside operational progress.',
+  description: 'Deep Rock Mining Ltd is guided by a clear vision, a focused mission and core values that place responsibility alongside operational progress.',
 };
 
 type DirectionCardVariant = 'vision' | 'mission';
@@ -57,7 +57,7 @@ export default function MissionVisionValuesPage() {
   return (
     <>
       <PageHero
-        title="The Direction and Principles Behind DeepRock."
+        title="The Direction and Principles Behind Deep Rock."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'About', href: '/about' },

@@ -9,19 +9,19 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://deeprockmining.com'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'DeepRock Mining Ltd',
-    template: '%s | DeepRock Mining Ltd',
+    default: 'Deep Rock Mining Ltd',
+    template: '%s | Deep Rock Mining Ltd',
   },
   description:
-    'DeepRock Mining Ltd is a Ghanaian precious minerals trading, gold aggregation and responsible mining company delivering integrated services across trading, exploration, operations and technical support.',
-  applicationName: 'DeepRock Mining Ltd',
+    'Deep Rock Mining Ltd is a Ghanaian precious minerals trading, gold aggregation and responsible mining company delivering integrated services across trading, exploration, operations and technical support.',
+  applicationName: 'Deep Rock Mining Ltd',
   authors: [
     {
-      name: 'DeepRock Mining Ltd',
+      name: 'Deep Rock Mining Ltd',
     },
   ],
-  creator: 'DeepRock Mining Ltd',
-  publisher: 'DeepRock Mining Ltd',
+  creator: 'Deep Rock Mining Ltd',
+  publisher: 'Deep Rock Mining Ltd',
   alternates: {
     canonical: '/',
   },
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_GH',
     url: '/',
-    siteName: 'DeepRock Mining Ltd',
-    title: 'DeepRock Mining Ltd',
+    siteName: 'Deep Rock Mining Ltd',
+    title: 'Deep Rock Mining Ltd',
     description:
       'Responsible gold trading, aggregation, mining, exploration and technical services in Ghana.',
     images: [
@@ -38,13 +38,13 @@ export const metadata: Metadata = {
         url: '/opengraph-image.png',
         width: 1200,
         height: 630,
-        alt: 'DeepRock Mining Ltd — Responsible Gold Trading and Mining',
+        alt: 'Deep Rock Mining Ltd — Responsible Gold Trading and Mining',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DeepRock Mining Ltd',
+    title: 'Deep Rock Mining Ltd',
     description:
       'Responsible gold trading, aggregation, mining, exploration and technical services in Ghana.',
     images: ['/twitter-image.png'],

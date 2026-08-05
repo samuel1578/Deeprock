@@ -6,7 +6,7 @@ import { LeadershipDesktop } from "./LeadershipDesktop"
 export const metadata: Metadata = {
   title: "Leadership",
   description:
-    "Meet the experienced professionals leading DeepRock Mining Ltd across trading, operations, exploration and technical services.",
+    "Meet the experienced professionals leading Deep Rock Mining Ltd across trading, operations, exploration and technical services.",
 }
 
 export default function LeadershipPage() {

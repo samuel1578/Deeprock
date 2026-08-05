@@ -6,7 +6,7 @@ import { companyContact } from '@/content/site';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'DeepRock Mining Ltd privacy policy and data protection information.',
+  description: 'Deep Rock Mining Ltd privacy policy and data protection information.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -47,7 +47,7 @@ export default function PrivacyPolicyPage() {
                 Data Protection
               </h2>
               <p className="text-graphite">
-                DeepRock is committed to protecting your personal information. Information may be handled by approved service providers where necessary for hosting, email delivery, analytics, security or professional advice, subject to appropriate controls.
+                Deep Rock is committed to protecting your personal information. Information may be handled by approved service providers where necessary for hosting, email delivery, analytics, security or professional advice, subject to appropriate controls.
               </p>
             </div>
 
@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
                 Your Rights
               </h2>
               <p className="text-graphite">
-                You may contact DeepRock to ask questions about information submitted through the website. Privacy questions may be directed to{' '}
+                You may contact Deep Rock to ask questions about information submitted through the website. Privacy questions may be directed to{' '}
                 <TextLink href={companyContact.emailLink} variant="copper">
                   {companyContact.email}
                 </TextLink>

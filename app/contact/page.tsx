@@ -8,7 +8,7 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Get in touch with DeepRock Mining Ltd for enquiries regarding gold trading, aggregation, mining operations and technical services.',
+  description: 'Get in touch with Deep Rock Mining Ltd for enquiries regarding gold trading, aggregation, mining operations and technical services.',
 };
 
 export default function ContactPage() {
@@ -16,7 +16,7 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="CONTACT"
-        title="Start a Conversation with DeepRock."
+        title="Start a Conversation with Deep Rock."
         summary="Contact our team about gold trading, aggregation, mining, exploration, equipment, consulting, sustainability or partnership opportunities."
         breadcrumbs={[
           { label: 'Home', href: '/' },
@@ -65,7 +65,7 @@ export default function ContactPage() {
                 Get in Touch
               </h2>
               <p className="text-graphite mb-6">
-                Online form delivery is not yet connected. Please contact DeepRock by phone or email.
+                Online form delivery is not yet connected. Please contact Deep Rock by phone or email.
               </p>
               <div className="space-y-4">
                 <ButtonLink href={companyContact.phoneLink} variant="bright-pattern" size="lg">

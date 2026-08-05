@@ -172,15 +172,6 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
                       exit="exit"
                       className="max-w-[34rem] md:max-w-[54rem]"
                     >
-                      {slide.eyebrow && (
-                        <motion.p
-                          variants={textVariants}
-                          className="text-sm md:text-base font-medium uppercase tracking-wider text-clay mb-4"
-                        >
-                          {slide.eyebrow}
-                        </motion.p>
-                      )}
-
                       <motion.h1
                         variants={textVariants}
                         className="font-display text-[clamp(2rem,8vw,3.25rem)] md:text-5xl lg:text-6xl text-white mb-6 leading-tight max-w-[16ch] inline-block bg-black/20 px-3 py-2 rounded"

@@ -7,7 +7,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 export function SiteFooter() {
   const currentYear = new Date().getFullYear();
 
-  const footerBrandName = 'DeepRock Co. Ltd';
+  const footerBrandName = 'Deep Rock Co. Ltd';
   const footerDescription = footerStatement.startsWith(footerBrandName)
     ? footerStatement.slice(footerBrandName.length).trimStart()
     : footerStatement;
@@ -22,7 +22,7 @@ export function SiteFooter() {
             <div className="shrink-0">
               <Image
                 src="/deeplogo.png"
-                alt="DeepRock Mining"
+                alt="Deep Rock Mining"
                 width={175}
                 height={95}
                 className="h-auto w-[150px] object-contain sm:w-[170px]"

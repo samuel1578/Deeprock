@@ -2,9 +2,9 @@
 // Global company and contact information
 
 export const siteConfig = {
-  name: 'DeepRock Co. Ltd',
-  shortName: 'DeepRock',
-  description: 'DeepRock Mining Ltd is a wholly Ghanaian precious minerals trading and mining company focused on responsible gold buying, aggregation, mining and technical services.',
+  name: 'Deep Rock Co. Ltd',
+  shortName: 'Deep Rock',
+  description: 'Deep Rock Mining Ltd is a wholly Ghanaian precious minerals trading and mining company focused on responsible gold buying, aggregation, mining and technical services.',
   tagline: 'Responsible Gold Trading. Sustainable Mining. Lasting Value.',
   alternateTagline: 'Ghanaian-owned. Responsibility-led.',
 } as const;
@@ -37,4 +37,4 @@ export const coreValues = [
   'Customer Focus',
 ] as const;
 
-export const footerStatement = 'DeepRock Co. Ltd is a wholly Ghanaian company focused on responsible precious minerals trading, gold aggregation, mining operations and technical support services.';
+export const footerStatement = 'Deep Rock Co. Ltd is a wholly Ghanaian company focused on responsible precious minerals trading, gold aggregation, mining operations and technical support services.';

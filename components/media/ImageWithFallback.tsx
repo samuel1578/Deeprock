@@ -54,7 +54,7 @@ export function ImageWithFallback({
         style={!isIntrinsic ? { aspectRatio: computedAspectRatio } : undefined}
       >
         <div className="text-center">
-          <p className="text-limestone text-sm font-medium">DeepRock</p>
+          <p className="text-limestone text-sm font-medium">Deep Rock</p>
           <p className="text-stone text-xs mt-1 max-w-[200px] truncate">
             {category}
           </p>

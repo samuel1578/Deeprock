@@ -25,7 +25,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${article.title} | DeepRock News`,
+    title: `${article.title} | Deep Rock News`,
     description: article.excerpt,
   };
 }

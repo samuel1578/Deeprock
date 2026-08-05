@@ -8,7 +8,7 @@ import { services, servicesOverviewIntro } from '@/content/services';
 
 export const metadata: Metadata = {
   title: 'Our Services',
-  description: 'DeepRock Mining Ltd provides integrated services across gold trading, aggregation, mining operations, exploration and technical support.',
+  description: 'Deep Rock Mining Ltd provides integrated services across gold trading, aggregation, mining operations, exploration and technical support.',
 };
 
 export default function ServicesPage() {
@@ -19,7 +19,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="SERVICES"
         title="Integrated Services Across Trading, Mining and Technical Operations."
-        summary={<BrandGlowText>Explore DeepRock&apos;s service portfolio across gold trading, aggregation, mining, exploration, equipment, technical consulting, environmental responsibility and mining support.</BrandGlowText>}
+        summary={<BrandGlowText text="Explore Deep Rock's service portfolio across gold trading, aggregation, mining, exploration, equipment, technical consulting, environmental responsibility and mining support." />}
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services' },

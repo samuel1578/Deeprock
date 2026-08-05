@@ -6,7 +6,7 @@ import { sustainabilityPillars, sustainabilityOverviewContent } from '@/content/
 
 export const metadata: Metadata = {
   title: 'Sustainability',
-  description: 'DeepRock Mining Ltd is committed to responsible gold trading, operational safety, environmental responsibility and community relationships.',
+  description: 'Deep Rock Mining Ltd is committed to responsible gold trading, operational safety, environmental responsibility and community relationships.',
 };
 
 export default function SustainabilityPage() {

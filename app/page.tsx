@@ -17,8 +17,8 @@ import { ValueGlyph } from '@/components/icons/ValueGlyph'
 import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
-  title: 'DeepRock Mining Ltd — Responsible Gold Trading & Mining',
-  description: 'DeepRock Mining Ltd provides responsible gold trading, aggregation, mining, exploration and technical support services in Ghana.',
+  title: 'Deep Rock Mining Ltd — Responsible Gold Trading & Mining',
+  description: 'Deep Rock Mining Ltd provides responsible gold trading, aggregation, mining, exploration and technical support services in Ghana.',
 };
 
 export default function HomePage() {
@@ -47,7 +47,7 @@ export default function HomePage() {
                 Integrated Services Across Trading, Mining and Technical Operations.
               </h2>
               <p className="text-lg text-graphite">
-                <BrandGlowText>Explore DeepRock&apos;s service portfolio across gold trading, aggregation, mining, exploration, equipment, technical consulting, environmental responsibility and mining support.</BrandGlowText>
+                <BrandGlowText text="Explore Deep Rock's service portfolio across gold trading, aggregation, mining, exploration, equipment, technical consulting, environmental responsibility and mining support." />
               </p>
             </div>
 
@@ -166,7 +166,12 @@ export default function HomePage() {
               <p className="text-lg text-black">
                 {leadershipCompanyDirectionStatement}
               </p>
-              <ButtonLink href="/about/leadership" variant="primary">
+              <ButtonLink
+                href="/about/leadership"
+                variant="bright-pattern"
+                size="lg"
+                className="px-8"
+              >
                 Meet the team
               </ButtonLink>
             </Stack>

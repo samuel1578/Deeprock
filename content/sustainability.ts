@@ -38,15 +38,15 @@ export const sustainabilityPillars: SustainabilityPillar[] = [
 
 export const sustainabilityOverviewContent = {
   heading: 'Responsibility Integrated into How We Work.',
-  summary: 'DeepRock is committed to ethical gold trading, operational safety, environmental responsibility and long-term relationships with mining communities and partners.',
-  introduction: 'Sustainability must be connected to decisions, responsibilities and evidence. DeepRock\'s website will communicate approved principles and activities without presenting unsupported targets or impact statistics.',
+  summary: 'Deep Rock is committed to ethical gold trading, operational safety, environmental responsibility and long-term relationships with mining communities and partners.',
+  introduction: 'Sustainability must be connected to decisions, responsibilities and evidence. Deep Rock\'s website will communicate approved principles and activities without presenting unsupported targets or impact statistics.',
 };
 
 export const sustainabilityPages: Record<string, SustainabilityPage> = {
   'responsible-sourcing': {
     slug: 'responsible-sourcing',
     heading: 'Responsible Sourcing Begins with Clear Expectations.',
-    body: 'DeepRock\'s responsible-sourcing approach is presented through appropriate partner engagement, clear documentation discussions, transparent communication and an understanding of the commercial and operational context. The approach focuses on engagement with licensed partners without describing a traceability system or audit programme unless verified details are supplied.',
+    body: 'Deep Rock\'s responsible-sourcing approach is presented through appropriate partner engagement, clear documentation discussions, transparent communication and an understanding of the commercial and operational context. The approach focuses on engagement with licensed partners without describing a traceability system or audit programme unless verified details are supplied.',
     points: [
       'Engage appropriate and licensed partners',
       'Discuss relevant documentation and sourcing expectations',
@@ -58,7 +58,7 @@ export const sustainabilityPages: Record<string, SustainabilityPage> = {
   'health-safety-environment': {
     slug: 'health-safety-environment',
     heading: 'Safe Operations and Environmental Responsibility Are Shared Duties.',
-    body: 'DeepRock lists safety and sustainability among its core values and includes an HSE management role in its leadership team. The Health, Safety & Environment approach focuses on risk awareness, clear responsibility, operational discipline, environmental consideration and continuous learning.',
+    body: 'Deep Rock lists safety and sustainability among its core values and includes an HSE management role in its leadership team. The Health, Safety & Environment approach focuses on risk awareness, clear responsibility, operational discipline, environmental consideration and continuous learning.',
     points: [
       'Plan work with relevant risks in view',
       'Communicate responsibilities and reporting channels',
@@ -70,7 +70,7 @@ export const sustainabilityPages: Record<string, SustainabilityPage> = {
   'community-impact': {
     slug: 'community-impact',
     heading: 'Stronger Relationships Begin with Respectful Engagement.',
-    body: 'Mining activity is connected to people and places. DeepRock\'s community engagement focuses on listening, realistic commitments, accessible feedback channels and long-term relationship building. The approach avoids project stories, donations or impact statistics until approved evidence is provided.',
+    body: 'Mining activity is connected to people and places. Deep Rock\'s community engagement focuses on listening, realistic commitments, accessible feedback channels and long-term relationship building. The approach avoids project stories, donations or impact statistics until approved evidence is provided.',
     points: [
       'Respect local context and stakeholder perspectives',
       'Communicate clearly and at appropriate times',

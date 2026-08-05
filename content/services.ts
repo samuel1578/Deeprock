@@ -25,7 +25,7 @@ export const services: Service[] = [
     category: 'Trading & Aggregation',
     image: '/images/services/gold-buying-trading.webp',
     summary: 'A responsible and transparent approach to sourcing, purchasing and marketing gold and other precious minerals.',
-    overview: 'DeepRock Mining Ltd participates in the precious minerals value chain through the buying and selling of gold. The service is designed around clear commercial engagement, responsible sourcing and dependable communication with mining and trading partners. The company presents itself as a commercial participant, not as a regulator or national authority, helping prospective partners begin a conversation without publishing prices, guarantees or unverified operational claims.',
+    overview: 'Deep Rock Mining Ltd participates in the precious minerals value chain through the buying and selling of gold. The service is designed around clear commercial engagement, responsible sourcing and dependable communication with mining and trading partners. The company presents itself as a commercial participant, not as a regulator or national authority, helping prospective partners begin a conversation without publishing prices, guarantees or unverified operational claims.',
     capabilities: [
       'Gold buying enquiries',
       'Precious minerals trading discussions',
@@ -54,8 +54,8 @@ export const services: Service[] = [
     name: 'Gold Aggregation',
     category: 'Trading & Aggregation',
     image: '/images/services/gold-aggregation.webp',
-    summary: 'Gold aggregation under DeepRock\'s self-financing Aggregator Licence, connecting licensed mining partners with responsible market access.',
-    overview: 'DeepRock\'s aggregation service focuses on sourcing, purchasing and combining gold from appropriate mining partners under its self-financing model. The service is described in clear commercial terms and linked strongly to integrity, transparency and responsible sourcing. The page presents the company\'s aggregation partnerships without implying that DeepRock licenses miners, sets national prices or exercises statutory authority.',
+    summary: 'Gold aggregation under Deep Rock\'s self-financing Aggregator Licence, connecting licensed mining partners with responsible market access.',
+    overview: 'Deep Rock\'s aggregation service focuses on sourcing, purchasing and combining gold from appropriate mining partners under its self-financing model. The service is described in clear commercial terms and linked strongly to integrity, transparency and responsible sourcing. The page presents the company\'s aggregation partnerships without implying that Deep Rock licenses miners, sets national prices or exercises statutory authority.',
     capabilities: [
       'Aggregation partnership enquiries',
       'Engagement with licensed small-scale miners',
@@ -85,7 +85,7 @@ export const services: Service[] = [
     category: 'Mining & Exploration',
     image: '/images/services/mining-operations.webp',
     summary: 'Responsible mining operations guided by safety, operational discipline and environmental awareness.',
-    overview: 'DeepRock\'s mining operations service describes the company\'s commitment to conducting mining activities responsibly while creating sustainable value for stakeholders. The service is presented based on verified information, avoiding unsubstantiated claims about project locations, production capacity, equipment fleets or performance statistics until the client provides verified details.',
+    overview: 'Deep Rock\'s mining operations service describes the company\'s commitment to conducting mining activities responsibly while creating sustainable value for stakeholders. The service is presented based on verified information, avoiding unsubstantiated claims about project locations, production capacity, equipment fleets or performance statistics until the client provides verified details.',
     capabilities: [
       'Mining operations planning',
       'Operational coordination',
@@ -115,7 +115,7 @@ export const services: Service[] = [
     category: 'Mining & Exploration',
     image: '/images/services/mineral-exploration.webp',
     summary: 'Geological and exploration support for better-informed mineral development decisions.',
-    overview: 'Mineral exploration requires disciplined field investigation, geological interpretation and clear technical communication. DeepRock\'s exploration service is presented as part of an integrated pathway from geological understanding to responsible mining decisions, avoiding claims about specific technologies, discoveries or exploration licences that have not been supplied.',
+    overview: 'Mineral exploration requires disciplined field investigation, geological interpretation and clear technical communication. Deep Rock\'s exploration service is presented as part of an integrated pathway from geological understanding to responsible mining decisions, avoiding claims about specific technologies, discoveries or exploration licences that have not been supplied.',
     capabilities: [
       'Exploration planning support',
       'Geological field assessment',
@@ -145,7 +145,7 @@ export const services: Service[] = [
     category: 'Technical Services',
     image: '/images/services/mining-equipment-supply.webp',
     summary: 'Mining equipment supply aligned with operational requirements and responsible use.',
-    overview: 'DeepRock\'s equipment supply service focuses on understanding operational needs, discussing suitable equipment categories and supporting responsible procurement decisions. The service remains broad until the client confirms the exact supply catalogue, geographic coverage and service-level commitments, avoiding claims about brand names, inventory levels, warranties or delivery timeframes until confirmed.',
+    overview: 'Deep Rock\'s equipment supply service focuses on understanding operational needs, discussing suitable equipment categories and supporting responsible procurement decisions. The service remains broad until the client confirms the exact supply catalogue, geographic coverage and service-level commitments, avoiding claims about brand names, inventory levels, warranties or delivery timeframes until confirmed.',
     capabilities: [
       'Equipment requirement discussions',
       'Supply enquiries for mining operations',
@@ -175,7 +175,7 @@ export const services: Service[] = [
     category: 'Technical Services',
     image: '/images/services/geological-consulting.webp',
     summary: 'Geological and technical consulting that supports clearer decisions across exploration and mining activities.',
-    overview: 'DeepRock offers geological and technical consulting as part of its service portfolio, emphasising structured problem definition, evidence-led analysis and practical communication. Professional credentials, laboratory partnerships and specialist methodologies are only included after client verification.',
+    overview: 'Deep Rock offers geological and technical consulting as part of its service portfolio, emphasising structured problem definition, evidence-led analysis and practical communication. Professional credentials, laboratory partnerships and specialist methodologies are only included after client verification.',
     capabilities: [
       'Geological review and interpretation',
       'Technical advisory support',
@@ -205,7 +205,7 @@ export const services: Service[] = [
     category: 'Responsible Operations',
     image: '/images/services/environmental-sustainability.webp',
     summary: 'Environmental and sustainability support that places responsibility alongside operational progress.',
-    overview: 'DeepRock states a commitment to environmental responsibility and sustainable mining. The environmental and sustainability service explains the principles that guide environmental consideration, responsible sourcing and long-term stakeholder value, without publishing invented ESG targets, carbon figures, reclamation statistics or certification badges.',
+    overview: 'Deep Rock states a commitment to environmental responsibility and sustainable mining. The environmental and sustainability service explains the principles that guide environmental consideration, responsible sourcing and long-term stakeholder value, without publishing invented ESG targets, carbon figures, reclamation statistics or certification badges.',
     capabilities: [
       'Environmental and sustainability planning support',
       'Responsible-sourcing guidance',
@@ -235,13 +235,13 @@ export const services: Service[] = [
     category: 'Technical Services',
     image: '/images/services/mining-support.webp',
     summary: 'Practical support services that help mining and exploration activities operate more effectively.',
-    overview: 'DeepRock\'s mining support service brings together commercial, technical and operational assistance according to the needs of a project or partner. The service remains broad until the client confirms the exact support catalogue, geographic coverage and service-level commitments.',
+    overview: 'Deep Rock\'s mining support service brings together commercial, technical and operational assistance according to the needs of a project or partner. The service remains broad until the client confirms the exact support catalogue, geographic coverage and service-level commitments.',
     capabilities: [
       'Operational support enquiries',
       'Technical coordination',
       'Partner and supplier coordination',
       'Project support planning',
-      'Integrated access to related DeepRock services',
+      'Integrated access to related Deep Rock services',
     ],
     targetAudience: [
       'Mining and exploration companies',

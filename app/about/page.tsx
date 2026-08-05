@@ -18,7 +18,7 @@ import { companyInfo } from '@/content/site';
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'DeepRock Mining Ltd is a Ghanaian company focused on responsible precious minerals trading, operational excellence and sustainable value.',
+  description: 'Deep Rock Mining Ltd is a Ghanaian company focused on responsible precious minerals trading, operational excellence and sustainable value.',
 };
 
 export default function AboutPage() {
@@ -26,7 +26,7 @@ export default function AboutPage() {
     <>
       <PageHero
         title="Responsible Trading. Capable Operations. Long-Term Value."
-        summary="DeepRock Mining Ltd is a wholly Ghanaian precious minerals trading and mining company focused on responsible commercial relationships, operational excellence and sustainable value."
+        summary="Deep Rock Mining Ltd is a wholly Ghanaian precious minerals trading and mining company focused on responsible commercial relationships, operational excellence and sustainable value."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'About' },
@@ -73,7 +73,7 @@ export default function AboutPage() {
                 >
                   <ImageWithFallback
                     src="/images/overview.webp"
-                    alt="DeepRock Mining company operations overview"
+                    alt="Deep Rock Mining company operations overview"
                     width={1200}
                     height={900}
                     category="Company Overview"
@@ -102,7 +102,7 @@ export default function AboutPage() {
                   </StaggerItem>
                   <StaggerItem>
                     <p className="text-lg text-graphite mb-6">
-                      DeepRock combines commercial trading and aggregation with mining, exploration and support services. This integrated model allows prospective partners to begin with one clearly defined need and understand the related capabilities available across the company.
+                      Deep Rock combines commercial trading and aggregation with mining, exploration and support services. This integrated model allows prospective partners to begin with one clearly defined need and understand the related capabilities available across the company.
                     </p>
                   </StaggerItem>
                   <div className="grid md:grid-cols-2 gap-6">
@@ -128,7 +128,7 @@ export default function AboutPage() {
             </Reveal>
 
             <nav
-              aria-label="About DeepRock"
+              aria-label="About Deep Rock"
               className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center"
             >
               <StaggerReveal

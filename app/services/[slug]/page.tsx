@@ -25,7 +25,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${service.name} | DeepRock Mining`,
+    title: `${service.name} | Deep Rock Mining`,
     description: service.summary,
   };
 }

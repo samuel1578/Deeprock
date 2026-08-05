@@ -1,6 +1,6 @@
 # DeepRock Motion System
 
-This document defines the shared Framer Motion architecture used across DeepRock.
+This document defines the shared Framer Motion architecture used across Deep Rock.
 It is the single source of truth for how entrance/reveal motion is implemented so
 that pages stay consistent, accessible, performant, and native-scroll friendly.
 

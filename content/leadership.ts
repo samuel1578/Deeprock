@@ -52,12 +52,12 @@ export const leadershipTeam: LeadershipMember[] = [
   },
 ];
 
-export const leadershipIntroduction = 'DeepRock Co. Ltd is led by professionals responsible for trading, operations, exploration, finance, health and safety, environmental management and business development. The current profile supplies names and roles only; biographies and personal statements remain client dependencies.';
+export const leadershipIntroduction = 'Deep Rock Co. Ltd is led by professionals responsible for trading, operations, exploration, finance, health and safety, environmental management and business development. The current profile supplies names and roles only; biographies and personal statements remain client dependencies.';
 
 export const leadershipFeatureHeading = 'Experienced Leadership Across Trading, Operations and Technical Services.';
 
-export const leadershipFeatureBody = 'DeepRock Co. Ltd is led by professionals with responsibilities spanning precious minerals trading, mining operations, exploration, finance, health and safety, environmental management and business development.';
+export const leadershipFeatureBody = 'Deep Rock Co. Ltd is led by professionals with responsibilities spanning precious minerals trading, mining operations, exploration, finance, health and safety, environmental management and business development.';
 
 export const leadershipFeaturedPerson = leadershipTeam[0];
 
-export const leadershipCompanyDirectionStatement = 'Experienced professionals guide DeepRock\'s commercial strategy, operational execution, and commitment to responsible trading and mining. The company aims to build long-term value for partners, communities, and stakeholders through disciplined execution and transparent engagement.';
+export const leadershipCompanyDirectionStatement = 'Experienced professionals guide Deep Rock\'s commercial strategy, operational execution, and commitment to responsible trading and mining. The company aims to build long-term value for partners, communities, and stakeholders through disciplined execution and transparent engagement.';

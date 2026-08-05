@@ -52,11 +52,11 @@ export function SiteHeader() {
               <Link
                 href="/"
                 className="flex items-center shrink-0"
-                aria-label="DeepRock Mining Ltd homepage"
+                aria-label="Deep Rock Mining Ltd homepage"
               >
                 <Image
                   src="/deeplogo.png"
-                  alt="DeepRock Mining Ltd"
+                  alt="Deep Rock Mining Ltd"
                   width={145}
                   height={78}
                   className="w-[105px] lg:w-[145px] h-auto object-contain"

@@ -2,8 +2,8 @@ import type { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'DeepRock Mining Ltd',
-        short_name: 'DeepRock',
+        name: 'Deep Rock Mining Ltd',
+        short_name: 'Deep Rock',
         description:
             'Responsible gold trading, aggregation, mining, exploration and technical services in Ghana.',
         start_url: '/',

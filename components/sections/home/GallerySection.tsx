@@ -21,9 +21,7 @@ export function GallerySection() {
               A Closer Look at Our Operations.
             </h2>
             <p className="text-lg text-graphite">
-              <BrandGlowText>
-                A visual record of DeepRock&apos;s trading, aggregation and mining activity across Ghana.
-              </BrandGlowText>
+              <BrandGlowText text="A visual record of Deep Rock's trading, aggregation and mining activity across Ghana." />
             </p>
           </div>
 

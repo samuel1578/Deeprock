@@ -56,19 +56,19 @@ export function CompanyIntroSection() {
               variants={itemVariants}
               className="text-sm font-bold uppercase tracking-widest text-copper mb-6"
             >
-              <BrandGlowText>DEEPROCK MINING LIMITED</BrandGlowText>
+              <BrandGlowText text="DEEPROCK MINING LIMITED" />
             </motion.p>
 
             <motion.h2
               variants={itemVariants}
               className="font-display text-4xl sm:text-5xl text-basalt mb-6 leading-tight"
             >
-              <BrandGlowText>{companyIntroductionContent.heading}</BrandGlowText>
+              <BrandGlowText text={companyIntroductionContent.heading} />
             </motion.h2>
 
             <motion.div variants={itemVariants} className="space-y-6">
               <p className="text-lg sm:text-xl text-graphite leading-relaxed max-w-prose">
-                <BrandGlowText>{leadText}</BrandGlowText>
+                <BrandGlowText text={leadText} />
               </p>
             </motion.div>
           </div>
@@ -81,7 +81,7 @@ export function CompanyIntroSection() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
               <ImageWithFallback
                 src={companyIntroductionContent.image}
-                alt="Gold bars being weighed, representing DeepRock Mining's operations."
+                alt="Gold bars being weighed, representing Deep Rock Mining's operations."
                 width={1200}
                 height={900}
                 category="Company Overview"
@@ -97,7 +97,7 @@ export function CompanyIntroSection() {
             <motion.div variants={itemVariants} className="space-y-6 mb-10">
               {supportingText.map((para, idx) => (
                 <p key={idx} className="text-base text-graphite/90 leading-relaxed max-w-prose">
-                  <BrandGlowText>{para}</BrandGlowText>
+                  <BrandGlowText text={para} />
                 </p>
               ))}
             </motion.div>
@@ -118,13 +118,13 @@ export function CompanyIntroSection() {
                       rel="noopener noreferrer"
                       className="text-sm font-medium text-copper underline decoration-copper/40 underline-offset-4 hover:decoration-copper hover:text-copper-hover transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 rounded-sm"
                   >
-                      Verify
+                      Verify Our License
                   </a>
               </div>
 
               {/* CTA */}
               <ButtonLink href="/about" variant="bright-pattern" size="lg" className="w-full sm:w-auto">
-                About DeepRock Mining
+                About Deep Rock Mining
               </ButtonLink>
             </motion.div>
           </div>

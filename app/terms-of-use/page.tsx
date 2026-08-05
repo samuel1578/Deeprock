@@ -6,7 +6,7 @@ import { companyContact } from '@/content/site';
 
 export const metadata: Metadata = {
   title: 'Terms of Use',
-  description: 'DeepRock Mining Ltd website terms of use and legal disclaimer.',
+  description: 'Deep Rock Mining Ltd website terms of use and legal disclaimer.',
 };
 
 export default function TermsOfUsePage() {
@@ -29,7 +29,7 @@ export default function TermsOfUsePage() {
                 Website Purpose
               </h2>
               <p className="text-graphite">
-                This website provides general corporate information about DeepRock Mining Ltd and its stated services. Content does not constitute financial, legal, investment, geological or regulatory advice.
+                This website provides general corporate information about Deep Rock Mining Ltd and its stated services. Content does not constitute financial, legal, investment, geological or regulatory advice.
               </p>
             </div>
 
@@ -38,7 +38,7 @@ export default function TermsOfUsePage() {
                 Accuracy of Information
               </h2>
               <p className="text-graphite">
-                DeepRock aims to keep information accurate, but service descriptions and general industry content may be updated. Users should confirm material commercial information directly with the company.
+                Deep Rock aims to keep information accurate, but service descriptions and general industry content may be updated. Users should confirm material commercial information directly with the company.
               </p>
             </div>
 
@@ -47,7 +47,7 @@ export default function TermsOfUsePage() {
                 Enquiries
               </h2>
               <p className="text-graphite">
-                Submitting an enquiry does not create a contract, confirm eligibility, reserve equipment, establish a trading relationship or guarantee that DeepRock will accept a proposed engagement.
+                Submitting an enquiry does not create a contract, confirm eligibility, reserve equipment, establish a trading relationship or guarantee that Deep Rock will accept a proposed engagement.
               </p>
             </div>
 
@@ -65,7 +65,7 @@ export default function TermsOfUsePage() {
                 External Links
               </h2>
               <p className="text-graphite">
-                External websites are provided for convenience. DeepRock is not responsible for their availability or content.
+                External websites are provided for convenience. Deep Rock is not responsible for their availability or content.
               </p>
             </div>
 
@@ -74,7 +74,7 @@ export default function TermsOfUsePage() {
                 Changes to Terms
               </h2>
               <p className="text-graphite">
-                DeepRock may revise the website and these terms at any time.
+                Deep Rock may revise the website and these terms at any time.
               </p>
             </div>
 
