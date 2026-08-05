@@ -12,6 +12,11 @@ export const siteConfig = {
 export const companyContact = {
   phone: '+233 54 170 3325',
   phoneLink: 'tel:+233541703325',
+  // WhatsApp deep link — single source of truth. The number is the canonical
+  // phone in international form (no +, spaces, or hyphens); the prefilled
+  // message is URL-encoded.
+  whatsappHref:
+    'https://wa.me/233541703325?text=Hello%20Deep%20Rock%2C%20I%20would%20like%20to%20discuss%20a%20partnership%20opportunity.',
   email: 'Deeprockmining.gh@gmail.com',
   emailLink: 'mailto:Deeprockmining.gh@gmail.com',
   address: 'The Emporium, 3rd Floor, M&ouml;venpick Ambassador Hotel, Independence Avenue, Ridge, Accra, Ghana',

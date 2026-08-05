@@ -250,3 +250,34 @@
   background-color: var(--color-copper) !important;
   opacity: 1 !important;
 }
+
+/* Shared Gallery Pagination (Sprint 17.4) */
+.deep-rock-gallery .swiper-pagination,
+.deep-rock-lightbox .swiper-pagination {
+  bottom: 8px !important;
+}
+
+.deep-rock-gallery .swiper-pagination-bullet,
+.deep-rock-lightbox .swiper-pagination-bullet {
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+  border-radius: 9999px !important;
+  opacity: 1 !important;
+  margin: 0 3px !important;
+  transition: background-color 0.3s ease !important;
+}
+
+/* Light-background galleries (homepage Gallery, CSR) use a darker inactive bullet. */
+.deep-rock-gallery .swiper-pagination-bullet {
+  background-color: rgba(49, 59, 69, 0.35) !important;
+}
+
+/* Dark lightbox uses a light inactive bullet. */
+.deep-rock-lightbox .swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.deep-rock-gallery .swiper-pagination-bullet-active,
+.deep-rock-lightbox .swiper-pagination-bullet-active {
+  background-color: #f26522 !important;
+}

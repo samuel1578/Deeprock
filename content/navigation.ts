@@ -86,6 +86,10 @@ export const primaryNavigation: NavMenu[] = [
         label: 'Community Impact',
         href: '/sustainability/community-impact',
       },
+      {
+        label: 'Corporate Social Responsibility',
+        href: '/csr',
+      },
     ],
   },
   {
@@ -129,6 +133,7 @@ export const footerSections = [
       { label: 'Responsible Sourcing', href: '/sustainability/responsible-sourcing' },
       { label: 'Health & Safety', href: '/sustainability/health-safety-environment' },
       { label: 'Community Impact', href: '/sustainability/community-impact' },
+      { label: 'Corporate Social Responsibility', href: '/csr' },
     ],
   },
   {

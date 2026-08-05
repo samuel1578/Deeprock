@@ -14,6 +14,7 @@ interface ImageWithFallbackProps {
   category?: string
   priority?: boolean
   sizes?: string
+  quality?: number
   aspectRatio?: 'auto' | '16/9' | '4/3' | '3/2' | '1/1' | '21/9'
   layout?: 'fill' | 'intrinsic'
 }
@@ -29,6 +30,7 @@ export function ImageWithFallback({
   category = 'Image',
   priority = false,
   sizes,
+  quality,
   aspectRatio = 'auto',
   layout = 'fill',
 }: ImageWithFallbackProps) {
@@ -78,6 +80,7 @@ export function ImageWithFallback({
         onError={() => setImageError(true)}
         priority={priority}
         sizes={sizes}
+        quality={quality}
       />
     </div>
   )

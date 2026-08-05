@@ -4,6 +4,7 @@ import { CompanyIntroSection } from '@/components/sections/CompanyIntroSection';
 import { GoldPriceSection } from '@/components/sections/home/GoldPriceSection';
 import { MobileServicesCarousel } from '@/components/sections/home/MobileServicesCarousel';
 import { MobileValuesCarousel } from '@/components/sections/home/MobileValuesCarousel';
+import { CsrSection } from '@/components/sections/home/CsrSection';
 import { GallerySection } from '@/components/sections/home/GallerySection';
 import { Container, Section, Stack, Inline } from '@/components/layout/Container';
 import { ButtonLink } from '@/components/ui/Button';
@@ -26,6 +27,7 @@ import {
   fadeUpVariants,
 } from '@/components/motion/motion-tokens'
 import { cn } from '@/lib/utils'
+import { WhatsappIcon } from '@/components/icons/WhatsappIcon'
 
 export const metadata: Metadata = {
   title: 'Deep Rock Mining Ltd — Responsible Gold Trading & Mining',
@@ -254,6 +256,9 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      {/* CSR */}
+      <CsrSection />
+
       {/* Gallery */}
       <GallerySection />
 
@@ -285,8 +290,12 @@ export default function HomePage() {
                 <StaggerItem variants={homepageCtaVariants}>
                   <ButtonLink
                     href={partnershipCTAContent.secondaryCTA.href}
-                    variant="dark-pattern"
+                    variant="whatsapp-pattern"
                     size="lg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    iconLeft={<WhatsappIcon className="size-5 shrink-0" />}
+                    className="w-full justify-center sm:w-auto"
                   >
                     {partnershipCTAContent.secondaryCTA.label}
                   </ButtonLink>

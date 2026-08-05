@@ -249,3 +249,42 @@ export const homepageGalleryImageVariants: Variants = {
     },
   },
 }
+
+// --- CSR system (Sprint 17.2) -------------------------------------------------
+// CSR-specific tokens only where the shared set does not already cover the
+// approved choreography. Both are y/x restrained and reduced-motion safe via
+// the shared primitives.
+
+export const csrImageVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 28,
+    scale: 0.985,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: {
+      duration: 0.78,
+      ease: motionEase,
+    },
+  },
+}
+
+export const csrGalleryVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+    scale: 0.99,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.72,
+      ease: motionEase,
+    },
+  },
+}

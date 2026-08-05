@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="120" viewBox="0 0 320 120" fill="none">
+  <title>DeepRock geometric mineral circuit pattern (WhatsApp)</title>
+  <desc>Seamless white line pattern with a controlled higher white opacity, designed for the Deep Rock WhatsApp button over its deep green background.</desc>
+
+  <defs>
+    <pattern id="deeprockPatternWhatsapp" width="160" height="120" patternUnits="userSpaceOnUse">
+      <g stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" opacity="0.35">
+        <!-- angular mineral/circuit paths -->
+        <path d="M-8 18H16L28 6H48L58 16H78L90 4H112L124 16H168"/>
+        <path d="M-10 42H10L24 28H44L56 40H72L86 26H106L118 38H138L150 26H170"/>
+        <path d="M-8 70H18L30 58H50L62 70H82L94 58H118L132 72H150L166 56"/>
+        <path d="M-12 98H8L22 84H42L54 96H74L86 84H108L120 96H140L154 82H170"/>
+
+        <!-- vertical connectors -->
+        <path d="M28 6V28M58 16V40M90 4V26M124 16V38"/>
+        <path d="M30 58V84M62 70V96M94 58V84M132 72V96"/>
+
+        <!-- small branch details -->
+        <path d="M16 18V32L8 40M48 6V-4M78 16V30L70 38"/>
+        <path d="M44 28V18L36 10M106 26V14L98 6M138 38V52L146 60"/>
+        <path d="M18 70V82L10 90M50 58V46L42 38M118 58V46L110 38"/>
+        <path d="M42 84V72L34 64M108 84V72L100 64M140 96V110L148 118"/>
+
+        <!-- short accent traces -->
+        <path d="M6 8H18M70 6H82M138 8H150"/>
+        <path d="M4 54H16M72 52H84M142 54H154"/>
+        <path d="M8 112H20M74 110H86M136 112H148"/>
+      </g>
+
+      <!-- honeycomb/mineral cell accent -->
+      <g stroke="#FFFFFF" stroke-width="1.2" opacity="0.28">
+        <path d="M118 46l7-4 7 4v8l-7 4-7-4z"/>
+        <path d="M132 46l7-4 7 4v8l-7 4-7-4z"/>
+        <path d="M125 58l7-4 7 4v8l-7 4-7-4z"/>
+        <path d="M139 58l7-4 7 4v8l-7 4-7-4z"/>
+      </g>
+
+      <!-- subtle nodes -->
+      <g fill="#FFFFFF" opacity="0.32">
+        <circle cx="28" cy="6" r="2.1"/>
+        <circle cx="58" cy="40" r="2.1"/>
+        <circle cx="94" cy="58" r="2.1"/>
+        <circle cx="132" cy="96" r="2.1"/>
+      </g>
+    </pattern>
+  </defs>
+
+  <rect width="320" height="120" fill="url(#deeprockPatternWhatsapp)"/>
+</svg>

@@ -1,5 +1,7 @@
 // DeepRock Homepage Content
 
+import { companyContact } from './site'
+
 export interface HeroSlide {
   number: number;
   eyebrow: string;
@@ -239,7 +241,7 @@ export const partnershipCTAContent = {
     href: '/contact?enquiry=partnership',
   },
   secondaryCTA: {
-    label: 'Call +233 54 170 3325',
-    href: 'tel:+233541703325',
+    label: `Message ${companyContact.phone}`,
+    href: companyContact.whatsappHref,
   },
 };

@@ -13,6 +13,8 @@ const buttonVariants = cva(
           'border-transparent bg-[#ff6200] text-white bg-[url("/images/patterns/deeprock-button-pattern.svg")] bg-repeat bg-[length:220px_auto] bg-blend-multiply shadow-[0_8px_24px_rgba(255,98,0,0.22)] hover:brightness-105 hover:shadow-[0_10px_30px_rgba(255,98,0,0.32)] active:translate-y-px active:brightness-95 focus-visible:ring-2 focus-visible:ring-[#ff6200] focus-visible:ring-offset-2 disabled:brightness-75',
         'dark-pattern':
           'border-transparent bg-[#313B45] text-white bg-[url("/images/patterns/deeprock-button-pattern-light.svg")] bg-repeat bg-[length:220px_84px] shadow-[0_8px_22px_rgba(49,59,69,0.18)] hover:brightness-110 hover:shadow-[0_10px_28px_rgba(49,59,69,0.26)] active:translate-y-px active:brightness-95 focus-visible:ring-2 focus-visible:ring-[#313B45] focus-visible:ring-offset-2 disabled:brightness-75',
+        'whatsapp-pattern':
+          'border-[#075E54] bg-[#075E54] text-white bg-[url("/images/patterns/deeprock-button-pattern-whatsapp.svg")] bg-repeat bg-[length:220px_auto] shadow-[0_8px_24px_rgba(7,94,84,0.24)] hover:border-[#064C45] hover:bg-[#064C45] hover:shadow-[0_10px_30px_rgba(6,76,69,0.32)] active:translate-y-px active:brightness-95 focus-visible:ring-2 focus-visible:ring-[#075E54] focus-visible:ring-offset-2 disabled:brightness-75',
         secondary:
           'bg-surface text-foreground border-border hover:bg-surface-muted focus-visible:ring-copper',
         outline:
