@@ -86,6 +86,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-quartz" suppressHydrationWarning>
+      <head>
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+      </head>
       <body className="antialiased flex flex-col min-h-screen">
         <SiteHeader />
         <main id="main-content" className="flex-1">

@@ -23,7 +23,6 @@ import {
   homepageCtaVariants,
   homepageCardVariants,
   homepageImageVariants,
-  fadeLeftVariants,
   fadeUpVariants,
 } from '@/components/motion/motion-tokens'
 import { cn } from '@/lib/utils'
@@ -194,70 +193,62 @@ export default function HomePage() {
       </Section>
 
       {/* Leadership Feature */}
-      <Section className="bg-white overflow-x-clip">
+      <Section className="overflow-x-clip bg-white">
         <Container variant="wide">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <Reveal
-              variants={fadeLeftVariants}
-              mobileVariants={fadeUpVariants}
-            >
-              <StaggerReveal staggerBy={0.1} delayChildren={0.04}>
-                <Stack gap="lg">
-                  <StaggerItem variants={homepageEyebrowVariants}>
-                    <p className="text-sm font-medium uppercase tracking-wide text-clay">
-                      LEADERSHIP
-                    </p>
-                  </StaggerItem>
-                  <StaggerItem variants={homepageHeadingVariants}>
-                    <h2 className="font-display text-4xl md:text-5xl text-basalt">
-                      Experienced Leadership Across Trading, Operations and Technical Services.
-                    </h2>
-                  </StaggerItem>
-                  <StaggerItem variants={homepageBodyVariants}>
-                    <p className="text-lg text-black">
-                      {leadershipCompanyDirectionStatement}
-                    </p>
-                  </StaggerItem>
-                  <StaggerItem variants={homepageCtaVariants} className="flex flex-col">
-                    <ButtonLink
-                      href="/about/leadership"
-                      variant="bright-pattern"
-                      size="lg"
-                      className="px-8"
-                    >
-                      Meet the team
-                    </ButtonLink>
-                  </StaggerItem>
-                </Stack>
-              </StaggerReveal>
-            </Reveal>
+          <div className="grid min-w-0 gap-10 md:grid-cols-2 md:items-center md:gap-12">
+            <StaggerReveal className="min-w-0" staggerBy={0.1} delayChildren={0.04}>
+              <Stack gap="lg" className="min-w-0">
+                <StaggerItem variants={homepageEyebrowVariants}>
+                  <p className="text-sm font-medium uppercase tracking-wide text-clay">
+                    LEADERSHIP
+                  </p>
+                </StaggerItem>
+                <StaggerItem variants={homepageHeadingVariants}>
+                  <h2 className="break-words font-display text-4xl leading-tight text-basalt md:text-5xl">
+                    Experienced Leadership Across Trading, Operations and Technical Services.
+                  </h2>
+                </StaggerItem>
+                <StaggerItem variants={homepageBodyVariants}>
+                  <p className="text-lg text-black">
+                    {leadershipCompanyDirectionStatement}
+                  </p>
+                </StaggerItem>
+                <StaggerItem variants={homepageCtaVariants} className="flex flex-col">
+                  <ButtonLink
+                    href="/about/leadership"
+                    variant="bright-pattern"
+                    size="lg"
+                    className="w-full justify-center px-8 sm:w-auto"
+                  >
+                    Meet the team
+                  </ButtonLink>
+                </StaggerItem>
+              </Stack>
+            </StaggerReveal>
 
             {leadershipFeaturedPerson && (
-              <Reveal
-                className="flex flex-col"
-                variants={homepageImageVariants}
-                mobileVariants={fadeUpVariants}
-                delay={0.08}
-              >
-                <ImageWithFallback
-                  src={leadershipFeaturedPerson.image}
-                  alt={leadershipFeaturedPerson.name}
-                  width={900}
-                  height={1200}
-                  category="Team"
-                  objectFit="contain"
-                  layout="intrinsic"
-                  className="rounded-lg mb-6"
-                />
-                <StaggerReveal staggerBy={0.1} delayChildren={0.2}>
-                  <h3 className="font-display text-2xl text-basalt mb-1 font-bold">
+              <StaggerReveal className="flex min-w-0 flex-col" staggerBy={0.1} delayChildren={0.08}>
+                <StaggerItem variants={homepageImageVariants}>
+                  <ImageWithFallback
+                    src={leadershipFeaturedPerson.image}
+                    alt={leadershipFeaturedPerson.name}
+                    width={900}
+                    height={1200}
+                    category="Team"
+                    objectFit="contain"
+                    layout="intrinsic"
+                    className="mb-6 rounded-lg"
+                  />
+                </StaggerItem>
+                <StaggerItem variants={homepageBodyVariants}>
+                  <h3 className="mb-1 font-display text-2xl font-bold text-basalt">
                     {leadershipFeaturedPerson.name}
                   </h3>
-                  <p className="text-copper font-bold uppercase tracking-wide text-sm">
+                  <p className="text-sm font-bold uppercase tracking-wide text-copper">
                     {leadershipFeaturedPerson.role}
                   </p>
-                </StaggerReveal>
-              </Reveal>
+                </StaggerItem>
+              </StaggerReveal>
             )}
           </div>
         </Container>

@@ -9,9 +9,6 @@ import {
   StaggerItem,
 } from '@/components/motion/StaggerReveal';
 import {
-  fadeLeftVariants,
-  imageRevealVariants,
-  cardRevealVariants,
   fadeUpVariants,
 } from '@/components/motion/motion-tokens';
 import { companyInfo } from '@/content/site';
@@ -38,8 +35,7 @@ export default function AboutPage() {
           <Stack gap="xl">
             <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12 xl:gap-16">
               <Reveal
-                variants={fadeLeftVariants}
-                mobileVariants={fadeUpVariants}
+                variants={fadeUpVariants}
                 className="lg:col-span-5"
               >
                 <h2 className="mb-6 font-display text-4xl text-basalt md:text-5xl">
@@ -60,8 +56,7 @@ export default function AboutPage() {
               </Reveal>
 
               <Reveal
-                variants={imageRevealVariants}
-                mobileVariants={fadeUpVariants}
+                variants={fadeUpVariants}
                 delay={0.08}
                 className="lg:col-span-7"
               >
@@ -92,9 +87,8 @@ export default function AboutPage() {
               </Reveal>
             </div>
 
-            <Reveal variants={cardRevealVariants}>
+            <StaggerReveal>
               <div className="mt-3 bg-limestone p-8 md:p-12 rounded-lg lg:mt-0">
-                <StaggerReveal>
                   <StaggerItem>
                     <h3 className="font-display text-3xl text-basalt mb-6">
                       Our Business Model
@@ -123,9 +117,8 @@ export default function AboutPage() {
                       </div>
                     </StaggerItem>
                   </div>
-                </StaggerReveal>
               </div>
-            </Reveal>
+            </StaggerReveal>
 
             <nav
               aria-label="About Deep Rock"

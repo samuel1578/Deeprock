@@ -6,7 +6,6 @@ import { ButtonLink } from '@/components/ui/Button'
 import { BrandGlowText } from '@/components/ui/BrandGlowText'
 import { companyIntroductionContent } from '@/content/homepage'
 import { SealCheck } from '@phosphor-icons/react'
-import { Reveal } from '@/components/motion/Reveal'
 import { StaggerReveal, StaggerItem } from '@/components/motion/StaggerReveal'
 import {
   homepageEyebrowVariants,
@@ -14,22 +13,21 @@ import {
   homepageBodyVariants,
   homepageCtaVariants,
   homepageImageVariants,
-  fadeUpVariants,
 } from '@/components/motion/motion-tokens'
 
 export function CompanyIntroSection() {
   const [leadText, ...supportingText] = companyIntroductionContent.body.split('\n\n')
 
   return (
-    <Section className="bg-white overflow-hidden pt-16 pb-0 sm:py-24 lg:py-32">
+    <Section className="overflow-x-clip bg-white pt-16 pb-16 sm:pt-24 sm:pb-24 lg:pt-32 lg:pb-32">
       <Container variant="wide">
         <StaggerReveal
-          className="flex flex-col gap-12 lg:grid lg:grid-cols-12 lg:gap-x-16 lg:gap-y-8 items-center"
+          className="flex flex-col gap-10 sm:gap-12 lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-16 lg:gap-y-8"
           staggerBy={0.1}
           delayChildren={0.04}
         >
           {/* Text Content Part 1: Eyebrow, Heading, Lead */}
-          <div className="lg:col-span-5 order-1">
+          <div className="min-w-0 lg:col-span-5 order-1">
             <StaggerItem variants={homepageEyebrowVariants}>
               <p className="text-sm font-bold uppercase tracking-widest text-copper mb-6">
                 <BrandGlowText text="DEEPROCK MINING LIMITED" />
@@ -52,28 +50,26 @@ export function CompanyIntroSection() {
           </div>
 
           {/* Image Content */}
-          <Reveal
-            className="lg:col-span-7 order-2 lg:row-span-2"
+          <StaggerItem
             variants={homepageImageVariants}
-            mobileVariants={fadeUpVariants}
-            delay={0.12}
+            className="order-2 min-w-0 lg:col-span-7 lg:row-span-2"
           >
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-limestone shadow-lg">
               <ImageWithFallback
                 src={companyIntroductionContent.image}
                 alt="Gold bars being weighed, representing Deep Rock Mining's operations."
                 width={1200}
                 height={900}
                 category="Company Overview"
-                className="w-full h-full object-cover object-center"
-                priority
+                sizes="(min-width: 1024px) 58vw, 100vw"
+                className="h-full w-full object-cover object-center"
               />
-              <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-lg" />
+              <div className="pointer-events-none absolute inset-0 rounded-lg ring-1 ring-inset ring-black/5" />
             </div>
-          </Reveal>
+          </StaggerItem>
 
           {/* Text Content Part 2: Supporting, Trust, CTA */}
-          <div className="lg:col-span-5 order-3">
+          <div className="min-w-0 lg:col-span-5 order-3">
             <StaggerItem variants={homepageBodyVariants} className="space-y-6 mb-10">
               {supportingText.map((para, idx) => (
                 <p key={idx} className="text-base text-graphite/90 leading-relaxed max-w-prose">

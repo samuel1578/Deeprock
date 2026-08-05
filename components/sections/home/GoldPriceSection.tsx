@@ -9,7 +9,6 @@ import {
   homepageHeadingVariants,
   homepageBodyVariants,
   cardRevealVariants,
-  fadeUpVariants,
 } from '@/components/motion/motion-tokens'
 
 export async function GoldPriceSection() {
@@ -28,7 +27,7 @@ export async function GoldPriceSection() {
     }
 
     return (
-        <Section className="bg-white py-12 md:py-24">
+        <Section className="overflow-x-clip bg-white py-12 md:py-24">
             <Container variant="wide">
                 <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8 lg:gap-12 items-center">
                     <StaggerReveal staggerBy={0.09} delayChildren={0.04}>
@@ -56,7 +55,6 @@ export async function GoldPriceSection() {
                     <Reveal
                         className="relative"
                         variants={cardRevealVariants}
-                        mobileVariants={fadeUpVariants}
                     >
                         {/* Decorative Pattern */}
                         <div

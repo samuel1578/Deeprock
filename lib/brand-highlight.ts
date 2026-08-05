@@ -1,13 +1,14 @@
 export const defaultBrandHighlights = [
-  'Deep Rock Mining Limited',
-  'Deep Rock Mining Ltd.',
-  'Deep Rock Mining Ltd',
-  'Deep Rock Co. Ltd.',
-  'Deep Rock Co. Ltd',
-  "Deep Rock's",
-  'Deep Rock’s',
-  'Deep Rock',
+  'DeepRock Mining Limited',
+  'DeepRock Mining Ltd.',
+  'DeepRock Mining Ltd',
+  'DeepRock Co. Ltd.',
+  'DeepRock Co. Ltd',
+  "DeepRock's",
+  'DeepRock’s',
+  'DeepRock',
 ] as const
+
 
 export function createHighlightPattern(
   highlights: readonly string[],

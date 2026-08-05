@@ -1,8 +1,10 @@
 'use client'
 
+import { useMemo } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import type { Variants } from 'framer-motion'
 import { motionEase, revealViewport } from './motion-tokens'
+import { useSafeInView } from './useSafeInView'
 
 const containerVariants = (
   staggerBy: number,
@@ -58,14 +60,24 @@ export function StaggerReveal({
   delayChildren = 0.08,
 }: StaggerRevealProps) {
   const shouldReduceMotion = useReducedMotion()
+  const [ref, isRevealed] = useSafeInView(revealViewport)
+
+  const active = useMemo<Variants>(
+    () =>
+      shouldReduceMotion
+        ? reducedContainerVariants
+        : containerVariants(staggerBy, delayChildren),
+    [shouldReduceMotion, staggerBy, delayChildren],
+  )
 
   return (
     <motion.div
+      ref={ref}
+      data-reveal
       className={className}
-      variants={shouldReduceMotion ? reducedContainerVariants : containerVariants(staggerBy, delayChildren)}
+      variants={active}
       initial="hidden"
-      whileInView="visible"
-      viewport={revealViewport}
+      animate={isRevealed ? 'visible' : 'hidden'}
     >
       {children}
     </motion.div>
@@ -81,11 +93,13 @@ type StaggerItemProps = {
 export function StaggerItem({ children, className, variants }: StaggerItemProps) {
   const shouldReduceMotion = useReducedMotion()
 
+  const active = useMemo<Variants>(
+    () => (shouldReduceMotion ? reducedItemVariants : (variants ?? itemVariants)),
+    [shouldReduceMotion, variants],
+  )
+
   return (
-    <motion.div
-      className={className}
-      variants={shouldReduceMotion ? reducedItemVariants : (variants ?? itemVariants)}
-    >
+    <motion.div className={className} variants={active}>
       {children}
     </motion.div>
   )

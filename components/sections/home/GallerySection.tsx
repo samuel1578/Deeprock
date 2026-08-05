@@ -7,15 +7,12 @@ import { Container, Section, Stack } from '@/components/layout/Container'
 import { BrandGlowText } from '@/components/ui/BrandGlowText'
 import { GalleryImage } from '@/components/media/GalleryImage'
 import { galleryImages } from '@/content/gallery'
-import { Reveal } from '@/components/motion/Reveal'
 import { StaggerReveal, StaggerItem } from '@/components/motion/StaggerReveal'
 import {
   homepageEyebrowVariants,
   homepageHeadingVariants,
   homepageBodyVariants,
-  homepageSectionVariants,
   homepageGalleryImageVariants,
-  fadeUpVariants,
 } from '@/components/motion/motion-tokens'
 
 export function GallerySection() {
@@ -43,12 +40,7 @@ export function GallerySection() {
             </div>
           </StaggerReveal>
 
-          <Reveal
-            className="relative"
-            variants={homepageSectionVariants}
-            mobileVariants={fadeUpVariants}
-          >
-            <StaggerReveal staggerBy={0.06} delayChildren={0.12}>
+          <StaggerReveal className="relative" staggerBy={0.06} delayChildren={0.12}>
               <Swiper
                 modules={[Navigation, A11y]}
                 slidesPerView={1}
@@ -97,7 +89,6 @@ export function GallerySection() {
                 </div>
               </div>
             </StaggerReveal>
-          </Reveal>
         </Stack>
       </Container>
     </Section>
