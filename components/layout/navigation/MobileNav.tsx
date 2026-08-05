@@ -200,6 +200,25 @@ export function MobileNav({ onClose, triggerRef }: MobileNavProps) {
           </div>
         </div>
       </nav>
+
+      <div className="mt-auto border-t border-white/10 px-5 py-5">
+        <div className="flex items-center gap-3">
+          <Image
+            src="/favicon.png"
+            alt=""
+            width={36}
+            height={36}
+            aria-hidden="true"
+            className="size-9 shrink-0 rounded-sm object-contain"
+          />
+          <div>
+            <p className="font-display text-sm text-copper">DeepRock Co. Ltd</p>
+            <p className="mt-0.5 text-xs text-white/60">
+              Responsible minerals. Capable operations.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

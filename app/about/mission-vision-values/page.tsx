@@ -1,18 +1,62 @@
 import type { Metadata } from 'next';
 import { PageHero } from '@/components/sections/PageHero';
 import { Container, Section, Stack } from '@/components/layout/Container';
-import { companyInfo, coreValues } from '@/content/site';
+import { DirectionCard } from '@/components/sections/about/DirectionCard';
+import { MobileValuesCarousel } from '@/components/sections/home/MobileValuesCarousel';
+import { ValueGlyph } from '@/components/icons/ValueGlyph';
+import { Reveal } from '@/components/motion/Reveal';
+import { StaggerReveal, StaggerItem } from '@/components/motion/StaggerReveal';
+import { cn } from '@/lib/utils';
+import { companyInfo } from '@/content/site';
+import { coreValuesContent, type ValueItem } from '@/content/homepage';
+import {
+  valueCardVariants,
+  fadeUpVariants,
+} from '@/components/motion/motion-tokens';
 
 export const metadata: Metadata = {
   title: 'Mission, Vision & Values',
   description: 'DeepRock Mining Ltd is guided by a clear vision, a focused mission and core values that place responsibility alongside operational progress.',
 };
 
+type DirectionCardVariant = 'vision' | 'mission';
+
+interface DirectionCardConfig {
+  key: DirectionCardVariant;
+  title: string;
+  statement: string;
+  supportingSentence: string;
+  backgroundImage: string;
+}
+
+const directionCards: DirectionCardConfig[] = [
+  {
+    key: 'vision',
+    title: 'Vision',
+    statement: companyInfo.vision,
+    supportingSentence:
+      'We aim to build enduring value through responsible growth, trusted partnerships and disciplined operations.',
+    backgroundImage: '/images/patterns/aya.png',
+  },
+  {
+    key: 'mission',
+    title: 'Mission',
+    statement: companyInfo.mission,
+    supportingSentence:
+      'We translate this purpose into practical action through accountable service delivery, technical capability and responsible market participation.',
+    backgroundImage: '/images/patterns/bi.png',
+  },
+];
+
+const coreValueItems: ValueItem[] = [
+  coreValuesContent.featured,
+  ...coreValuesContent.supporting,
+];
+
 export default function MissionVisionValuesPage() {
   return (
     <>
       <PageHero
-        eyebrow="ABOUT"
         title="The Direction and Principles Behind DeepRock."
         breadcrumbs={[
           { label: 'Home', href: '/' },
@@ -24,39 +68,76 @@ export default function MissionVisionValuesPage() {
       <Section className="bg-white">
         <Container variant="wide">
           <Stack gap="xl">
-            {/* Vision */}
-            <div className="bg-limestone p-8 md:p-12 rounded-lg">
-              <h2 className="font-display text-3xl text-basalt mb-4">Vision</h2>
-              <p className="text-lg text-graphite leading-relaxed">
-                {companyInfo.vision}
-              </p>
-            </div>
-
-            {/* Mission */}
-            <div className="bg-copper text-white p-8 md:p-12 rounded-lg">
-              <h2 className="font-display text-3xl mb-4">Mission</h2>
-              <p className="text-lg text-clay leading-relaxed">
-                {companyInfo.mission}
-              </p>
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
+              {directionCards.map((card) => (
+                <Reveal
+                  key={card.key}
+                  variants={fadeUpVariants}
+                  delay={card.key === 'mission' ? 0.08 : 0}
+                >
+                  <DirectionCard
+                    variant={card.key}
+                    title={card.title}
+                    statement={card.statement}
+                    supportingSentence={card.supportingSentence}
+                    backgroundImage={card.backgroundImage}
+                  />
+                </Reveal>
+              ))}
             </div>
 
             {/* Values */}
             <div>
-              <h2 className="font-display text-3xl text-basalt mb-8">
-                Core Values
-              </h2>
-              <p className="text-lg text-graphite mb-8">
-                Our values guide how we communicate, make decisions, manage risk and build relationships. They should be visible in everyday conduct, not limited to statements on a page.
-              </p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {coreValues.map((value) => (
-                  <div key={value} className="bg-limestone p-6 rounded-lg text-center">
-                    <h3 className="font-display text-lg text-basalt">
-                      {value}
-                    </h3>
-                  </div>
+              <StaggerReveal>
+                <StaggerItem>
+                  <h2 className="mb-8 font-display text-3xl text-basalt">
+                    Core Values
+                  </h2>
+                </StaggerItem>
+                <StaggerItem>
+                  <p className="mb-8 max-w-3xl text-lg leading-relaxed text-graphite">
+                    Our values guide how we communicate, make decisions, manage risk and build relationships. They should be visible in everyday conduct, not limited to statements on a page.
+                  </p>
+                </StaggerItem>
+              </StaggerReveal>
+
+              <MobileValuesCarousel values={coreValueItems} animated />
+
+              <StaggerReveal
+                className="hidden gap-5 md:grid md:grid-cols-2 lg:grid-cols-3"
+                staggerBy={0.1}
+                delayChildren={0.05}
+              >
+                {coreValueItems.map((value) => (
+                  <StaggerItem key={value.key} variants={valueCardVariants}>
+                    <article
+                      className={cn(
+                        'relative flex h-full flex-col overflow-hidden rounded-lg p-6 md:p-8',
+                        value.variant === 'copper'
+                          ? 'bg-copper text-white'
+                          : 'bg-slate-card text-white',
+                      )}
+                    >
+                      <ValueGlyph valueKey={value.key} variant={value.variant} />
+
+                      <h3 className="mt-5 font-display text-[24px] leading-[1.2] text-white md:text-[26px]">
+                        {value.title}
+                      </h3>
+
+                      <p
+                        className={cn(
+                          'mt-3 text-base leading-[1.6] md:text-lg',
+                          value.variant === 'copper'
+                            ? 'text-white/90'
+                            : 'text-white/85',
+                        )}
+                      >
+                        {value.description}
+                      </p>
+                    </article>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerReveal>
             </div>
           </Stack>
         </Container>

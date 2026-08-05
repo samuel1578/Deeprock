@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { siteConfig, companyContact, footerStatement } from '@/content/site';
 import { footerSections } from '@/content/navigation';
 import { Mail, Phone, MapPin } from 'lucide-react';
@@ -6,15 +7,41 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 export function SiteFooter() {
   const currentYear = new Date().getFullYear();
 
+  const footerBrandName = 'DeepRock Co. Ltd';
+  const footerDescription = footerStatement.startsWith(footerBrandName)
+    ? footerStatement.slice(footerBrandName.length).trimStart()
+    : footerStatement;
+
   return (
     <footer className="bg-basalt text-white">
       {/* Main Footer Content */}
       <div className="border-b border-slate">
         <div className="container mx-auto px-4 py-12 md:py-16">
           {/* Logo and Statement */}
-          <div className="mb-12 max-w-sm">
-            <h3 className="font-display text-xl mb-3">{siteConfig.shortName}</h3>
-            <p className="text-sm text-stone">{footerStatement}</p>
+          <div className="mb-12 flex max-w-xl flex-col items-start gap-5 sm:flex-row sm:gap-6">
+            <div className="shrink-0">
+              <Image
+                src="/deeplogo.png"
+                alt="DeepRock Mining"
+                width={175}
+                height={95}
+                className="h-auto w-[150px] object-contain sm:w-[170px]"
+                sizes="(max-width: 639px) 150px, 170px"
+              />
+            </div>
+
+            <div className="min-w-0">
+              <p className="text-sm leading-relaxed text-stone sm:text-[15px]">
+                {footerStatement.startsWith(footerBrandName) && (
+                  <>
+                    <span className="font-display font-semibold text-copper [text-shadow:0_0_10px_rgba(242,101,34,0.28)]">
+                      {footerBrandName}
+                    </span>{' '}
+                  </>
+                )}
+                {footerDescription}
+              </p>
+            </div>
           </div>
 
           {/* Footer Grid */}
