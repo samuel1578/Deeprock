@@ -54,7 +54,7 @@ that pages stay consistent, accessible, performant, and native-scroll friendly.
 
 ## Page entrance patterns
 
-- Hero sections are not animated by this system (owned by `PageHero`).
+- Heroes are animated only where `PageHero` is passed `motion` (Services + Sustainability routes, Sprint 18). Other pages (About, News, Contact, legal) keep a static hero. The motion hero uses the shared `StaggerReveal` (eyebrow → title → summary) plus `Reveal` with `heroImageVariants` (scale-only at full opacity so the LCP image paints immediately).
 - The first content section uses `Reveal` with a directional variant on desktop
   and `fadeUpVariants` on mobile.
 

@@ -1,12 +1,15 @@
 import type { Metadata } from 'next';
+import { buildSeoMetadata } from '@/lib/seo/metadata';
 import { PageHero } from '@/components/sections/PageHero';
 import { Container, Section, Stack } from '@/components/layout/Container';
 import { newsArticles, newsListingIntro } from '@/content/news';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildSeoMetadata({
   title: 'News & Insights',
-  description: 'Deep Rock Mining Ltd provides perspectives and practical insights on responsible gold trading, mining operations, safety and sustainability.',
-};
+  description:
+    'Deep Rock Mining Co. Ltd perspectives and practical insights on responsible gold trading, mining operations, safety, sustainability and technical services in Ghana.',
+  path: '/news',
+});
 
 export default function NewsPage() {
   const featuredArticle = newsArticles.find(a => a.featured);
@@ -22,6 +25,7 @@ export default function NewsPage() {
           { label: 'Home', href: '/' },
           { label: 'News' },
         ]}
+        path="/news"
       />
 
       <Section className="bg-white">

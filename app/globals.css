@@ -281,3 +281,16 @@
 .deep-rock-lightbox .swiper-pagination-bullet-active {
   background-color: #f26522 !important;
 }
+
+/* Deep Rock brand glow — single source of truth for the inline glow used by
+   BrandText (SSR-safe, services + sustainability routes) and BrandGlowText.
+   Matches the established inline-glow treatment: brand orange, restrained
+   two-layer halo, same baseline and weight so typography hierarchy is kept. */
+.deep-rock-brand {
+  color: #f26522;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-shadow:
+    0 0 8px rgba(242, 101, 34, 0.3),
+    0 0 18px rgba(242, 101, 34, 0.12);
+}

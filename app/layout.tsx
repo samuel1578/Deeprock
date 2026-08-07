@@ -3,58 +3,49 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { SiteHeader } from '@/components/layout/SiteHeader'
 import { SiteFooter } from '@/components/layout/SiteFooter'
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://deeprockmining.com'
+import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd'
+import { siteConfig, absoluteUrl } from '@/lib/seo/site-config'
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Deep Rock Mining Ltd',
-    template: '%s | Deep Rock Mining Ltd',
+    default: siteConfig.defaultTitle,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    'Deep Rock Mining Ltd is a Ghanaian precious minerals trading, gold aggregation and responsible mining company delivering integrated services across trading, exploration, operations and technical support.',
-  applicationName: 'Deep Rock Mining Ltd',
-  authors: [
-    {
-      name: 'Deep Rock Mining Ltd',
-    },
-  ],
-  creator: 'Deep Rock Mining Ltd',
-  publisher: 'Deep Rock Mining Ltd',
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
-    locale: 'en_GH',
-    url: '/',
-    siteName: 'Deep Rock Mining Ltd',
-    title: 'Deep Rock Mining Ltd',
-    description:
-      'Responsible gold trading, aggregation, mining, exploration and technical services in Ghana.',
+    locale: siteConfig.locale,
+    url: absoluteUrl('/'),
+    siteName: siteConfig.name,
+    title: siteConfig.defaultTitle,
+    description: siteConfig.description,
     images: [
       {
-        url: '/opengraph-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Deep Rock Mining Ltd — Responsible Gold Trading and Mining',
+        url: absoluteUrl(siteConfig.ogImage),
+        width: siteConfig.ogImageWidth,
+        height: siteConfig.ogImageHeight,
+        alt: siteConfig.ogImageAlt,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Deep Rock Mining Ltd',
-    description:
-      'Responsible gold trading, aggregation, mining, exploration and technical services in Ghana.',
-    images: ['/twitter-image.png'],
+    title: siteConfig.defaultTitle,
+    description: siteConfig.description,
+    images: [absoluteUrl(siteConfig.ogImage)],
   },
   icons: {
     icon: [
-      {
-        url: '/favicon.png',
-        type: 'image/png',
-      },
+      { url: '/favicon.png', type: 'image/png' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
     ],
     shortcut: ['/favicon.png'],
     apple: [
@@ -73,6 +64,16 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
+  // Google Search Console verification. Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+  // in the production environment to the token Google provides; until then no
+  // verification tag is emitted.
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? {
+        verification: {
+          google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+        },
+      }
+    : {}),
 }
 
 export const viewport: Viewport = {
@@ -92,6 +93,7 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className="antialiased flex flex-col min-h-screen">
+        <OrganizationJsonLd />
         <SiteHeader />
         <main id="main-content" className="flex-1">
           {children}

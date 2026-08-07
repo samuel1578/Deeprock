@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { buildSeoMetadata } from '@/lib/seo/metadata';
 import { PageHero } from '@/components/sections/PageHero';
 import { Container, Section, Stack } from '@/components/layout/Container';
 import { TextLink } from '@/components/ui/TextLink';
@@ -17,10 +18,12 @@ import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { companyContact } from '@/content/site';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildSeoMetadata({
   title: 'Contact Us',
-  description: 'Get in touch with Deep Rock Mining Ltd for enquiries regarding gold trading, aggregation, mining operations and technical services.',
-};
+  description:
+    'Contact Deep Rock Mining Co. Ltd in Accra, Ghana for gold trading, aggregation, mining operations, exploration, equipment supply, geological consulting and technical services.',
+  path: '/contact',
+});
 
 export default function ContactPage() {
   return (
@@ -33,6 +36,7 @@ export default function ContactPage() {
           { label: 'Home', href: '/' },
           { label: 'Contact' },
         ]}
+        path="/contact"
       />
 
       <Section className="bg-white">

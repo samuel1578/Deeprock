@@ -80,11 +80,11 @@ export function MobileNav({ onClose, triggerRef }: MobileNavProps) {
           href="/"
           onClick={handleClose}
           className="flex items-center shrink-0"
-          aria-label="Deep Rock Mining Ltd homepage"
+          aria-label="Deep Rock Mining Co. Ltd homepage"
         >
           <Image
             src="/deeplogo.png"
-            alt="Deep Rock Mining Ltd"
+            alt="Deep Rock Mining Co. Ltd"
             width={175}
             height={95}
             className="w-[175px] h-auto object-contain"
@@ -212,7 +212,7 @@ export function MobileNav({ onClose, triggerRef }: MobileNavProps) {
             className="size-9 shrink-0 rounded-sm object-contain"
           />
           <div>
-            <p className="font-display text-sm text-copper">Deep Rock Co. Ltd</p>
+            <p className="font-display text-sm text-copper">Deep Rock Mining Co. Ltd</p>
             <p className="mt-0.5 text-xs text-white/60">
               Responsible minerals. Capable operations.
             </p>

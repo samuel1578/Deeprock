@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'Deep Rock Mining Ltd',
+        name: 'Deep Rock Mining Co. Ltd',
         short_name: 'Deep Rock',
         description:
             'Responsible gold trading, aggregation, mining, exploration and technical services in Ghana.',
@@ -13,13 +13,18 @@ export default function manifest(): MetadataRoute.Manifest {
         icons: [
             {
                 src: '/favicon.png',
-                sizes: '512x512',
+                sizes: 'any',
                 type: 'image/png',
             },
             {
                 src: '/apple-icon.png',
                 sizes: '180x180',
                 type: 'image/png',
+            },
+            {
+                src: '/icon.svg',
+                sizes: 'any',
+                type: 'image/svg+xml',
             },
         ],
     }

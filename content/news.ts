@@ -28,9 +28,9 @@ export const newsArticles: NewsArticle[] = [
     date: '1 August 2026',
     image: '/images/news/building-trust-gold-value-chain.webp',
     excerpt: 'Why integrity, transparency and accountable partnerships matter at every stage of precious minerals trading.',
-    author: 'Deep Rock Mining Ltd',
+    author: 'Deep Rock Mining Co. Ltd',
     content: [
-      'Trust is an operating requirement. Precious minerals trading depends on more than the movement of a valuable commodity. It depends on clear relationships, credible documentation, responsible sourcing and confidence that each party understands its obligations. For Deep Rock Mining Ltd, integrity and transparency are therefore not decorative brand values. They are the basis on which long-term commercial relationships should be built.',
+      'Trust is an operating requirement. Precious minerals trading depends on more than the movement of a valuable commodity. It depends on clear relationships, credible documentation, responsible sourcing and confidence that each party understands its obligations. For Deep Rock Mining Co. Ltd, integrity and transparency are therefore not decorative brand values. They are the basis on which long-term commercial relationships should be built.',
       'Clear engagement with mining partners. Licensed miners and mining organisations need reliable channels through which they can discuss market access, aggregation and related support. A responsible trading company should communicate its requirements clearly, avoid unnecessary ambiguity and treat every commercial enquiry with consistency. That approach helps partners prepare the correct information and reduces avoidable friction.',
       'Accountability throughout the relationship. Accountability means keeping commitments, documenting decisions and addressing concerns promptly. It also means recognising that responsible gold trading has environmental, social and institutional implications. Deep Rock\'s stated ambition is to create sustainable value for customers, partners, communities and shareholders, and that requires disciplined conduct throughout the relationship.',
       'A platform for responsible growth. As Deep Rock develops its trading, aggregation, mining and technical services, the company\'s public website will provide a central source of verified information. Partners will be able to understand the company\'s service scope, leadership, values and contact channels before beginning a formal discussion.',
@@ -49,7 +49,7 @@ export const newsArticles: NewsArticle[] = [
     date: '1 August 2026',
     image: '/images/news/responsible-gold-aggregation.webp',
     excerpt: 'A practical look at aggregation, responsible sourcing and dependable market access for licensed mining partners.',
-    author: 'Deep Rock Mining Ltd',
+    author: 'Deep Rock Mining Co. Ltd',
     content: [
       'Aggregation connects production with formal markets. Gold aggregation brings together material sourced from appropriate mining partners so it can move through a structured commercial pathway. Done responsibly, this process can improve communication, documentation and access to dependable buyers.',
       'The importance of responsible sourcing. A strong aggregation relationship should consider where gold comes from, whether the parties are appropriately licensed and whether the engagement reflects applicable requirements. Responsible sourcing is not a single statement on a website. It requires ongoing attention to documentation, partner expectations and operational conduct.',
@@ -69,7 +69,7 @@ export const newsArticles: NewsArticle[] = [
     date: '1 August 2026',
     image: '/images/news/safety-core-principle.webp',
     excerpt: 'Safety must shape planning, communication and everyday decisions across mining and support activities.',
-    author: 'Deep Rock Mining Ltd',
+    author: 'Deep Rock Mining Co. Ltd',
     content: [
       'Safety begins before work starts. Responsible operations begin with understanding the task, the environment and the people who may be affected. Planning should identify relevant hazards, define responsibilities and ensure that expectations are understood before activity begins.',
       'Communication is part of risk control. Clear instructions, reporting channels and the willingness to raise concerns are essential. A safety culture is weakened when information is withheld or when people are uncertain about who should act.',
@@ -89,7 +89,7 @@ export const newsArticles: NewsArticle[] = [
     date: '1 August 2026',
     image: '/images/news/geological-insight-better-decisions.webp',
     excerpt: 'How disciplined geological investigation and clear technical communication support exploration and mining development.',
-    author: 'Deep Rock Mining Ltd',
+    author: 'Deep Rock Mining Co. Ltd',
     content: [
       'Understand before committing. Exploration and mining decisions involve technical, financial, environmental and community considerations. Geological information helps project stakeholders understand the opportunity and the uncertainty before committing resources.',
       'From field information to decisions. Field observations, available records and technical interpretation must be brought together in a way that supports practical decisions. The value is not simply in collecting information, but in explaining what that information means for the next stage of work.',
@@ -109,7 +109,7 @@ export const newsArticles: NewsArticle[] = [
     date: '1 August 2026',
     image: '/images/news/sustainability-beyond-compliance.webp',
     excerpt: 'Long-term value depends on environmental responsibility, stakeholder trust and decisions that remain defensible over time.',
-    author: 'Deep Rock Mining Ltd',
+    author: 'Deep Rock Mining Co. Ltd',
     content: [
       'A broader view of value. Mining and precious minerals trading create commercial opportunities, but they also affect workers, communities, land and institutions. Sustainable value requires these relationships to be considered alongside financial outcomes.',
       'Environmental responsibility. Environmental awareness should be integrated into planning and operations rather than treated as a final communication exercise. The appropriate actions will depend on the project context, applicable requirements and the responsibilities of each party.',
@@ -129,7 +129,7 @@ export const newsArticles: NewsArticle[] = [
     date: '1 August 2026',
     image: '/images/news/integrated-mining-support.webp',
     excerpt: 'Mining projects often need coordinated technical, operational, equipment and sustainability support rather than isolated services.',
-    author: 'Deep Rock Mining Ltd',
+    author: 'Deep Rock Mining Co. Ltd',
     content: [
       'Projects are interconnected. An exploration question may lead to equipment requirements, operational planning, environmental considerations or specialist technical advice. Treating every need as unrelated can create gaps in communication and responsibility.',
       'Define the need first. Effective support begins with a clear description of the operating context, desired outcome and constraints. That makes it easier to identify the relevant Deep Rock service and determine whether additional specialist partners are required.',

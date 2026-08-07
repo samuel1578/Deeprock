@@ -7,7 +7,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 export function SiteFooter() {
   const currentYear = new Date().getFullYear();
 
-  const footerBrandName = 'Deep Rock Co. Ltd';
+  const footerBrandName = 'Deep Rock Mining Co. Ltd';
   const footerDescription = footerStatement.startsWith(footerBrandName)
     ? footerStatement.slice(footerBrandName.length).trimStart()
     : footerStatement;

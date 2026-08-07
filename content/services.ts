@@ -25,7 +25,7 @@ export const services: Service[] = [
     category: 'Trading & Aggregation',
     image: '/images/services/gold-buying-trading.webp',
     summary: 'A responsible and transparent approach to sourcing, purchasing and marketing gold and other precious minerals.',
-    overview: 'Deep Rock Mining Ltd participates in the precious minerals value chain through the buying and selling of gold. The service is designed around clear commercial engagement, responsible sourcing and dependable communication with mining and trading partners. The company presents itself as a commercial participant, not as a regulator or national authority, helping prospective partners begin a conversation without publishing prices, guarantees or unverified operational claims.',
+    overview: 'Deep Rock Mining Co. Ltd participates in the precious minerals value chain through the buying and selling of gold. The service is designed around clear commercial engagement, responsible sourcing and dependable communication with mining and trading partners. The company presents itself as a commercial participant, not as a regulator or national authority, helping prospective partners begin a conversation without publishing prices, guarantees or unverified operational claims.',
     capabilities: [
       'Gold buying enquiries',
       'Precious minerals trading discussions',
@@ -53,7 +53,7 @@ export const services: Service[] = [
     slug: 'gold-aggregation',
     name: 'Gold Aggregation',
     category: 'Trading & Aggregation',
-    image: '/images/services/gold-aggregation.webp',
+    image: '/images/services/gold-aggregation.jpg',
     summary: 'Gold aggregation under Deep Rock\'s self-financing Aggregator Licence, connecting licensed mining partners with responsible market access.',
     overview: 'Deep Rock\'s aggregation service focuses on sourcing, purchasing and combining gold from appropriate mining partners under its self-financing model. The service is described in clear commercial terms and linked strongly to integrity, transparency and responsible sourcing. The page presents the company\'s aggregation partnerships without implying that Deep Rock licenses miners, sets national prices or exercises statutory authority.',
     capabilities: [
@@ -83,7 +83,7 @@ export const services: Service[] = [
     slug: 'mining-operations',
     name: 'Mining Operations',
     category: 'Mining & Exploration',
-    image: '/images/services/mining-operations.webp',
+    image: '/images/services/mining-operations.jpg',
     summary: 'Responsible mining operations guided by safety, operational discipline and environmental awareness.',
     overview: 'Deep Rock\'s mining operations service describes the company\'s commitment to conducting mining activities responsibly while creating sustainable value for stakeholders. The service is presented based on verified information, avoiding unsubstantiated claims about project locations, production capacity, equipment fleets or performance statistics until the client provides verified details.',
     capabilities: [
@@ -113,7 +113,7 @@ export const services: Service[] = [
     slug: 'mineral-exploration',
     name: 'Mineral Exploration',
     category: 'Mining & Exploration',
-    image: '/images/services/mineral-exploration.webp',
+    image: '/images/services/mineral-exploration.jpg',
     summary: 'Geological and exploration support for better-informed mineral development decisions.',
     overview: 'Mineral exploration requires disciplined field investigation, geological interpretation and clear technical communication. Deep Rock\'s exploration service is presented as part of an integrated pathway from geological understanding to responsible mining decisions, avoiding claims about specific technologies, discoveries or exploration licences that have not been supplied.',
     capabilities: [

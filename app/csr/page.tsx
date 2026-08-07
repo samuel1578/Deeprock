@@ -1,14 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { buildSeoMetadata } from '@/lib/seo/metadata';
 import { PageHero } from '@/components/sections/PageHero';
 import { Container, Section, Stack } from '@/components/layout/Container';
 import { ImageWithFallback } from '@/components/media/ImageWithFallback';
+import { BrandText } from '@/components/ui/BrandText';
 import { csrEvents, csrListingIntro } from '@/content/csr';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildSeoMetadata({
   title: 'Corporate Social Responsibility',
   description: csrListingIntro,
-};
+  path: '/csr',
+});
 
 export default function CsrPage() {
   const featured = csrEvents.find((event) => event.featured);
@@ -19,11 +22,12 @@ export default function CsrPage() {
       <PageHero
         eyebrow="CORPORATE SOCIAL RESPONSIBILITY"
         title="Our Corporate Social Responsibility"
-        summary={csrListingIntro}
+        summary={<BrandText text={csrListingIntro} />}
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'CSR' },
         ]}
+        path="/csr"
       />
 
       <Section className="bg-white">
@@ -52,7 +56,9 @@ export default function CsrPage() {
                     <h2 className="mb-4 font-display text-3xl text-basalt transition-colors group-hover:text-copper">
                       {featured.title}
                     </h2>
-                    <p className="mb-4 text-graphite">{featured.excerpt}</p>
+                    <p className="mb-4 text-graphite">
+                      <BrandText text={featured.excerpt} />
+                    </p>
                     <span className="text-sm font-medium text-copper">
                       Read the story →
                     </span>
@@ -87,7 +93,7 @@ export default function CsrPage() {
                         {event.title}
                       </h3>
                       <p className="mb-3 line-clamp-2 text-sm text-graphite">
-                        {event.excerpt}
+                        <BrandText text={event.excerpt} />
                       </p>
                       {event.date && (
                         <p className="text-xs text-stone">{event.date}</p>

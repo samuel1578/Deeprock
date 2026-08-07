@@ -1,13 +1,15 @@
 import type { Metadata } from 'next';
+import { buildSeoMetadata } from '@/lib/seo/metadata';
 import { PageHero } from '@/components/sections/PageHero';
 import { Container, Section } from '@/components/layout/Container';
 import { TextLink } from '@/components/ui/TextLink';
 import { companyContact } from '@/content/site';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildSeoMetadata({
   title: 'Terms of Use',
-  description: 'Deep Rock Mining Ltd website terms of use and legal disclaimer.',
-};
+  description: 'Deep Rock Mining Co. Ltd website terms of use and legal disclaimer.',
+  path: '/terms-of-use',
+});
 
 export default function TermsOfUsePage() {
   return (
@@ -29,7 +31,7 @@ export default function TermsOfUsePage() {
                 Website Purpose
               </h2>
               <p className="text-graphite">
-                This website provides general corporate information about Deep Rock Mining Ltd and its stated services. Content does not constitute financial, legal, investment, geological or regulatory advice.
+                This website provides general corporate information about Deep Rock Mining Co. Ltd and its stated services. Content does not constitute financial, legal, investment, geological or regulatory advice.
               </p>
             </div>
 

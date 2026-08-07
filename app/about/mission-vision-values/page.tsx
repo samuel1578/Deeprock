@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { buildSeoMetadata } from '@/lib/seo/metadata';
 import { PageHero } from '@/components/sections/PageHero';
 import { Container, Section, Stack } from '@/components/layout/Container';
 import { DirectionCard } from '@/components/sections/about/DirectionCard';
@@ -14,10 +15,20 @@ import {
   fadeUpVariants,
 } from '@/components/motion/motion-tokens';
 
-export const metadata: Metadata = {
+/**
+ * Caching: fully static editorial route.
+ * Content is sourced from local modules (`@/content/site`, `@/content/homepage`) and
+ * local pattern images. The Framer Motion pieces are Client Components and do not
+ * make this route server-rendered on demand. Refreshed by deployment only.
+ */
+export const dynamic = 'force-static';
+
+export const metadata: Metadata = buildSeoMetadata({
   title: 'Mission, Vision & Values',
-  description: 'Deep Rock Mining Ltd is guided by a clear vision, a focused mission and core values that place responsibility alongside operational progress.',
-};
+  description:
+    'The vision, mission and core values guiding Deep Rock Mining Co. Ltd — responsibility, safety, transparency and long-term value across trading and mining in Ghana.',
+  path: '/about/mission-vision-values',
+});
 
 type DirectionCardVariant = 'vision' | 'mission';
 
@@ -63,6 +74,7 @@ export default function MissionVisionValuesPage() {
           { label: 'About', href: '/about' },
           { label: 'Mission, Vision & Values' },
         ]}
+        path="/about/mission-vision-values"
       />
 
       <Section className="bg-white">

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { buildSeoMetadata } from '@/lib/seo/metadata';
 import { PageHero } from '@/components/sections/PageHero';
 import { CsrEventDetails } from '@/components/csr/CsrEventDetails';
 import { getCsrEventBySlug, csrEvents } from '@/content/csr';
@@ -22,10 +23,11 @@ export async function generateMetadata({
     };
   }
 
-  return {
-    title: `${event.title} | Deep Rock CSR`,
+  return buildSeoMetadata({
+    title: event.title,
     description: event.excerpt,
-  };
+    path: `/csr/${event.slug}`,
+  });
 }
 
 export async function generateStaticParams() {
@@ -55,6 +57,7 @@ export default async function CsrEventPage({ params }: CsrEventPageProps) {
           { label: 'CSR', href: '/csr' },
           { label: event.title },
         ]}
+        path={`/csr/${event.slug}`}
       />
       <CsrEventDetails event={event} />
     </>

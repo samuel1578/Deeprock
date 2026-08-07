@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { buildSeoMetadata } from '@/lib/seo/metadata';
 import { HeroCarousel } from '@/components/sections/HeroCarousel';
 import { CompanyIntroSection } from '@/components/sections/CompanyIntroSection';
 import { GoldPriceSection } from '@/components/sections/home/GoldPriceSection';
@@ -29,10 +30,31 @@ import {
 import { cn } from '@/lib/utils'
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon'
 
-export const metadata: Metadata = {
-  title: 'Deep Rock Mining Ltd — Responsible Gold Trading & Mining',
-  description: 'Deep Rock Mining Ltd provides responsible gold trading, aggregation, mining, exploration and technical support services in Ghana.',
-};
+/**
+ * Caching: static shell with a revalidating data dependency.
+ *
+ * Every section on this page is built from local content modules and local images
+ * except <GoldPriceSection />, which awaits `fetchGoldMarketData()`. That fetch opts
+ * into the Next.js Data Cache with `next: { revalidate: 300 }` (see
+ * `GOLD_REVALIDATE_SECONDS` in `lib/market/gold-api.ts`), which already gives this
+ * route a 5-minute revalidation window.
+ *
+ * The literal below only restates that inherited window so the intent is explicit in
+ * the route and so the page still self-heals on a 5-minute cycle if the gold provider
+ * is unreachable during a build. Keep it in sync with `GOLD_REVALIDATE_SECONDS`
+ * (route config must be a static literal, so it cannot import the constant).
+ *
+ * `dynamic = 'force-static'` is deliberately NOT used here: it would pin the segment
+ * to `revalidate: false` and freeze the server-rendered gold price at build time.
+ */
+export const revalidate = 300;
+
+export const metadata: Metadata = buildSeoMetadata({
+  // No title: the root layout's default title applies (avoids template double-append).
+  description:
+    'Deep Rock Mining Co. Ltd is a Ghana-based mining company providing gold aggregation, precious minerals trading, mining operations, mineral exploration, equipment supply, geological consulting and responsible mining services.',
+  path: '/',
+});
 
 export default function HomePage() {
   const featuredServices = services.slice(0, 4);

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { buildSeoMetadata } from '@/lib/seo/metadata';
 import { PageHero } from '@/components/sections/PageHero';
 import { Container, Section, Stack } from '@/components/layout/Container';
 import { ButtonLink } from '@/components/ui/Button';
@@ -13,21 +14,33 @@ import {
 } from '@/components/motion/motion-tokens';
 import { companyInfo } from '@/content/site';
 
-export const metadata: Metadata = {
+/**
+ * Caching: fully static editorial route.
+ * All content comes from local modules (`@/content/site`) and local images, and no
+ * imported server dependency reads cookies, headers, draft mode or search params.
+ * Output is prerendered at build time, served from the Vercel CDN, and replaced by
+ * the next deployment. No ISR interval — the content only changes when code ships.
+ */
+export const dynamic = 'force-static';
+
+export const metadata: Metadata = buildSeoMetadata({
   title: 'About Us',
-  description: 'Deep Rock Mining Ltd is a Ghanaian company focused on responsible precious minerals trading, operational excellence and sustainable value.',
-};
+  description:
+    'Deep Rock Mining Co. Ltd is a wholly Ghanaian precious minerals trading and mining company focused on responsible gold buying, aggregation, mining operations and technical services in Ghana.',
+  path: '/about',
+});
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
         title="Responsible Trading. Capable Operations. Long-Term Value."
-        summary="Deep Rock Mining Ltd is a wholly Ghanaian precious minerals trading and mining company focused on responsible commercial relationships, operational excellence and sustainable value."
+        summary="Deep Rock Mining Co. Ltd is a wholly Ghanaian precious minerals trading and mining company focused on responsible commercial relationships, operational excellence and sustainable value."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'About' },
         ]}
+        path="/about"
       />
 
       <Section className="bg-white">

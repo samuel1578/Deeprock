@@ -65,24 +65,13 @@ export function BrandGlowText({
         }
 
         const classes = cn(
-          'inline align-baseline leading-[inherit]',
-          'font-semibold tracking-[-0.015em]',
-          'text-[#f26522]',
+          'deep-rock-brand inline align-baseline leading-[inherit]',
           className,
         )
 
-        const style = {
-          textShadow:
-            '0 0 8px rgba(242, 101, 34, 0.3), 0 0 18px rgba(242, 101, 34, 0.12)',
-        }
-
         if (!animate || prefersReducedMotion) {
           return (
-            <span
-              key={`${part}-${index}`}
-              className={classes}
-              style={style}
-            >
+            <span key={`${part}-${index}`} className={classes}>
               {part}
             </span>
           )
@@ -92,7 +81,6 @@ export function BrandGlowText({
           <motion.span
             key={`${part}-${index}`}
             className={classes}
-            style={style}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

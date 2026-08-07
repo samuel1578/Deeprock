@@ -1,13 +1,12 @@
 import type { MetadataRoute } from 'next'
+import { siteConfig } from '@/lib/seo/site-config'
 
 export default function robots(): MetadataRoute.Robots {
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://deeprockmining.com'
-
-    return {
-        rules: {
-            userAgent: '*',
-            allow: '/',
-        },
-        sitemap: `${siteUrl}/sitemap.xml`,
-    }
+  return {
+    rules: {
+      userAgent: '*',
+      allow: '/',
+    },
+    sitemap: `${siteConfig.url}/sitemap.xml`,
+  }
 }

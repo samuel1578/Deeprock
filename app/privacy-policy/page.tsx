@@ -1,13 +1,15 @@
 import type { Metadata } from 'next';
+import { buildSeoMetadata } from '@/lib/seo/metadata';
 import { PageHero } from '@/components/sections/PageHero';
 import { Container, Section } from '@/components/layout/Container';
 import { TextLink } from '@/components/ui/TextLink';
 import { companyContact } from '@/content/site';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildSeoMetadata({
   title: 'Privacy Policy',
-  description: 'Deep Rock Mining Ltd privacy policy and data protection information.',
-};
+  description: 'Deep Rock Mining Co. Ltd privacy policy and data protection information.',
+  path: '/privacy-policy',
+});
 
 export default function PrivacyPolicyPage() {
   return (

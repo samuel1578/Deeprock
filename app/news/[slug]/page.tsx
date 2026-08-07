@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { buildSeoMetadata } from '@/lib/seo/metadata';
 import { PageHero } from '@/components/sections/PageHero';
 import { Container, Section, Stack } from '@/components/layout/Container';
 import { ButtonLink } from '@/components/ui/Button';
@@ -24,10 +25,11 @@ export async function generateMetadata({
     };
   }
 
-  return {
-    title: `${article.title} | Deep Rock News`,
+  return buildSeoMetadata({
+    title: article.title,
     description: article.excerpt,
-  };
+    path: `/news/${article.slug}`,
+  });
 }
 
 export async function generateStaticParams() {
@@ -57,6 +59,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           { label: 'News', href: '/news' },
           { label: article.title },
         ]}
+        path={`/news/${article.slug}`}
       />
 
       <Section className="bg-white">

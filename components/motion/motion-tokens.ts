@@ -235,6 +235,27 @@ export const homepageCtaVariants: Variants = {
   },
 }
 
+// --- Hero image (Services + Sustainability, Sprint 18) --------------------
+// Scale-only entrance at full opacity: the hero is the LCP element, so it
+// must paint immediately — no opacity 0 start that would delay the LCP
+// entry. A 3% settle keeps the reveal subtle (no dramatic zooms) and is
+// transform-only, so it stays compositor-friendly.
+
+export const heroImageVariants: Variants = {
+  hidden: {
+    opacity: 1,
+    scale: 1.03,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: motionEase,
+    },
+  },
+}
+
 export const homepageGalleryImageVariants: Variants = {
   hidden: {
     opacity: 0,

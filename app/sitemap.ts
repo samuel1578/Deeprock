@@ -1,54 +1,54 @@
-import { MetadataRoute } from 'next'
-import { newsArticles } from '@/content/news'
+import type { MetadataRoute } from 'next'
+import { publicStaticRoutes, absoluteUrl } from '@/lib/seo/routes'
 import { services } from '@/content/services'
 import { sustainabilityPillars } from '@/content/sustainability'
+import { newsArticles } from '@/content/news'
+import { csrEvents } from '@/content/csr'
 
+/**
+ * Sitemap (https://deeprockminingh.com/sitemap.xml).
+ *
+ * Includes only canonical, public, indexable production routes. API routes,
+ * internals and the removed Community Impact route are not included. No
+ * fabricated per-request lastModified timestamps; changeFrequency/priority are
+ * conservative guidance only.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://deeprockmining.com'
+  const staticRoutes = publicStaticRoutes.map((route) => ({
+    url: absoluteUrl(route.path),
+    ...(route.priority !== undefined ? { priority: route.priority } : {}),
+    ...(route.changeFrequency ? { changeFrequency: route.changeFrequency } : {}),
+  }))
 
-    const staticRoutes = [
-        '',
-        '/about',
-        '/about/leadership',
-        '/about/mission-vision-values',
-        '/contact',
-        '/news',
-        '/privacy-policy',
-        '/services',
-        '/sustainability',
-        '/terms-of-use',
-    ].map((route) => ({
-        url: `${siteUrl}${route}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: route === '' ? 1 : 0.8,
-    }))
+  const serviceRoutes = services.map((service) => ({
+    url: absoluteUrl(`/services/${service.slug}`),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
 
-    const newsRoutes = newsArticles.map((article) => ({
-        url: `${siteUrl}/news/${article.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-    }))
+  const sustainabilityRoutes = sustainabilityPillars.map((pillar) => ({
+    url: absoluteUrl(pillar.route),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
 
-    const serviceRoutes = services.map((service) => ({
-        url: `${siteUrl}/services/${service.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-    }))
+  const newsRoutes = newsArticles.map((article) => ({
+    url: absoluteUrl(`/news/${article.slug}`),
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  }))
 
-    const sustainabilityRoutes = sustainabilityPillars.map((pillar) => ({
-        url: `${siteUrl}/sustainability/${pillar.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-    }))
+  const csrRoutes = csrEvents.map((event) => ({
+    url: absoluteUrl(`/csr/${event.slug}`),
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  }))
 
-    return [
-        ...staticRoutes,
-        ...newsRoutes,
-        ...serviceRoutes,
-        ...sustainabilityRoutes,
-    ]
+  return [
+    ...staticRoutes,
+    ...serviceRoutes,
+    ...sustainabilityRoutes,
+    ...newsRoutes,
+    ...csrRoutes,
+  ]
 }

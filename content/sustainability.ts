@@ -28,12 +28,6 @@ export const sustainabilityPillars: SustainabilityPillar[] = [
     summary: 'Safety-conscious operations, environmental awareness and accountable risk management.',
     route: '/sustainability/health-safety-environment',
   },
-  {
-    title: 'Community Impact',
-    slug: 'community-impact',
-    summary: 'Respectful communication and long-term relationships with communities connected to mining activity.',
-    route: '/sustainability/community-impact',
-  },
 ];
 
 export const sustainabilityOverviewContent = {
@@ -65,18 +59,6 @@ export const sustainabilityPages: Record<string, SustainabilityPage> = {
       'Support safe behaviour and concern escalation',
       'Consider environmental responsibilities during planning and operations',
       'Review outcomes and identify improvements',
-    ],
-  },
-  'community-impact': {
-    slug: 'community-impact',
-    heading: 'Stronger Relationships Begin with Respectful Engagement.',
-    body: 'Mining activity is connected to people and places. Deep Rock\'s community engagement focuses on listening, realistic commitments, accessible feedback channels and long-term relationship building. The approach avoids project stories, donations or impact statistics until approved evidence is provided.',
-    points: [
-      'Respect local context and stakeholder perspectives',
-      'Communicate clearly and at appropriate times',
-      'Provide accessible channels for questions and feedback',
-      'Avoid promises that have not been formally approved',
-      'Share verified updates when material activity affects stakeholders',
     ],
   },
 };

@@ -1,5 +1,6 @@
 import { Container, Section, Stack } from '@/components/layout/Container'
 import { TextLink } from '@/components/ui/TextLink'
+import { BrandText } from '@/components/ui/BrandText'
 import { CsrEventGallery } from '@/components/csr/CsrEventGallery'
 import { Reveal } from '@/components/motion/Reveal'
 import { StaggerReveal, StaggerItem } from '@/components/motion/StaggerReveal'
@@ -43,7 +44,7 @@ export function CsrEventDetails({ event }: CsrEventDetailsProps) {
               <div className="space-y-6">
                 {event.body.map((paragraph, index) => (
                   <p key={index} className="text-lg text-graphite leading-relaxed">
-                    {paragraph}
+                    <BrandText text={paragraph} />
                   </p>
                 ))}
               </div>
