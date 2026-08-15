@@ -233,7 +233,7 @@ export const services: Service[] = [
     slug: 'mining-support',
     name: 'Mining Support Services',
     category: 'Technical Services',
-    image: '/images/services/mining-support.webp',
+    image: '/images/services/miningsupport.webp',
     summary: 'Practical support services that help mining and exploration activities operate more effectively.',
     overview: 'Deep Rock\'s mining support service brings together commercial, technical and operational assistance according to the needs of a project or partner. The service remains broad until the client confirms the exact support catalogue, geographic coverage and service-level commitments.',
     capabilities: [

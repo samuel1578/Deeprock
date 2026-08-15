@@ -43,18 +43,8 @@ export const metadata: Metadata = {
     images: [absoluteUrl(siteConfig.ogImage)],
   },
   icons: {
-    icon: [
-      { url: '/favicon.png', type: 'image/png' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
+    icon: [{ url: '/favicon.png', type: 'image/png' }],
     shortcut: ['/favicon.png'],
-    apple: [
-      {
-        url: '/apple-icon.png',
-        sizes: '180x180',
-        type: 'image/png',
-      },
-    ],
   },
   robots: {
     index: true,

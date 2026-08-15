@@ -1,9 +1,4 @@
 // Deep Rock CSR Content
-//
-// NOTE: All copy in this file is TEMPORARY and pending approval.
-// No dates, locations, beneficiaries or donation quantities have been
-// invented. Replace the flagged placeholders once final event details
-// are approved.
 
 import type { GalleryImage } from './gallery'
 
@@ -40,15 +35,14 @@ export const csrListingIntro =
 
 export const csrEvents: CsrEvent[] = [
   {
-    // TODO: replace with the approved production slug once the final event name is confirmed
     slug: 'community-donation',
-    // TODO: replace with the approved final event title
-    title: 'Community Donation Initiative',
-    // TODO: replace with approved copy; deliberately avoids specifics
+    title:
+      "Deep Rock Mining Ltd Demonstrates Commitment to Community Welfare Through CSR Initiative at Children's Hospital, Accra",
     excerpt:
-      'A donation initiative supporting practical community development in the communities connected to Deep Rock’s operations.',
+      "Deep Rock Mining Ltd donated essential items — including food, provisions, oxygen cylinders and other hospital supplies — to the Children's Hospital in Accra, reaffirming its commitment to community welfare and corporate social responsibility.",
     category: 'Donation',
-    // NOTE: date and location intentionally omitted until approved.
+    date: '11 July',
+    location: 'Accra, Ghana',
     coverImages: ['/images/csr/csr-1.jpg', '/images/csr/csr-2.jpg'],
     // NOTE: every real image discovered in public/images/csr/ (verified paths and
     // dimensions). There is no csr-7.jpg in the folder.
@@ -102,11 +96,15 @@ export const csrEvents: CsrEvent[] = [
         alt: 'Deep Rock CSR donation event photograph',
       },
     ],
-    // TODO: placeholder story copy — replace with the approved event story
     body: [
-      'Deep Rock supports communities connected to its operations through practical, targeted social-impact activities. This donation initiative is one part of that ongoing commitment.',
-      'The initiative focuses on community development priorities identified together with local stakeholders, helping to strengthen the relationships that responsible mining and trading depend on.',
-      'Further details of the event, its beneficiaries and the full story will be published here once the final programme has been approved.',
+      "Deep Rock Mining Ltd has reaffirmed its commitment to improving lives and supporting vulnerable communities through a Corporate Social Responsibility (CSR) outreach at the Children's Hospital in Accra.",
+      'As part of its ongoing commitment to giving back to society, the company donated a wide range of essential items to support healthcare delivery and improve the well-being of children receiving treatment at the hospital. The donation included food items, provisions, oxygen cylinders, and other essential hospital supplies aimed at enhancing patient care and supporting the work of healthcare professionals.',
+      "Beyond the presentation of the items, representatives of Deep Rock Mining Ltd spent quality time interacting with the children, their families, and hospital staff. The visit brought moments of joy, encouragement, and hope to the young patients, reflecting the company's belief that compassion and community support are integral to sustainable business success.",
+      'Speaking during the presentation, the Managing Director of Deep Rock Mining Ltd stated:',
+      '“At Deep Rock Mining Ltd, we believe that businesses have a responsibility to contribute meaningfully to the communities in which they operate. Supporting healthcare institutions and bringing hope to children and their families is one of the ways we demonstrate our commitment to social responsibility. We are honoured to support the Children’s Hospital and commend the remarkable work of its healthcare professionals.”',
+      "Management of the Children's Hospital expressed sincere appreciation to Deep Rock Mining Ltd for the generous donation and thoughtful gesture. The hospital noted that the donated items, particularly the oxygen cylinders and other medical supplies, would contribute significantly to improving patient care while easing some of the operational challenges faced by the facility.",
+      "Corporate Social Responsibility remains a core pillar of Deep Rock Mining Ltd's values. The company recognizes that sustainable business growth goes hand in hand with investing in the health, well-being, and development of the communities it serves. Through initiatives such as healthcare support, community development, education, and environmental stewardship, Deep Rock Mining Ltd continues to make meaningful contributions toward Ghana's socio-economic development.",
+      'As the visit concluded, smiles filled the faces of the children, caregivers, and members of staff, serving as a reminder that acts of kindness and generosity can inspire hope and make a meaningful difference in the lives of those who need it most.',
     ],
     featured: true,
   },

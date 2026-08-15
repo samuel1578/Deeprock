@@ -42,7 +42,6 @@ function ActiveLeader({ member, onPrevious, onNext }: { member: LeadershipMember
         <p className="text-lg text-copper font-bold mb-6 uppercase tracking-wide">
           {member.role}
         </p>
-        <p className="text-base text-graphite">{member.biography}</p>
         <div className="flex items-center gap-3 mt-6">
           <button
             type="button"

@@ -60,7 +60,6 @@ function LeadershipCard({ member }: { member: LeadershipMember }) {
         <p className="text-sm text-copper font-bold mb-4 uppercase tracking-wide">
           {member.role}
         </p>
-        <p className="text-base text-graphite flex-grow">{member.biography}</p>
       </div>
     </div>
   )
