@@ -23,6 +23,11 @@ export const leadershipTeam: LeadershipMember[] = [
     image: '/images/home/team/abed.jpeg',
   },
   {
+    name: 'Kevin Siriboe',
+    role: 'Trading & Operations Manager',
+    image: '/images/home/team/amotey.jpeg',
+  },
+  {
     name: 'Alidu Issah',
     role: 'Exploration Manager',
     image: '/images/home/team/alidu-issah.jpg',
