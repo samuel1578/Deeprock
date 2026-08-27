@@ -18,9 +18,9 @@ export const leadershipTeam: LeadershipMember[] = [
     image: '/images/home/team/kelvin-siriboe.jpg',
   },
   {
-    name: 'Kelvin Siriboe',
+    name: 'Mr. Abednego Edemor Vondee',
     role: 'Trading & Aggregation Manager',
-    image: '/images/home/team/kelvin-siri.jpg',
+    image: '/images/home/team/abed.jpeg',
   },
   {
     name: 'Alidu Issah',
