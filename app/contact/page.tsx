@@ -16,12 +16,13 @@ import {
 } from '@/components/motion/motion-tokens';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { companyContact } from '@/content/site';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
+import { OfficesColumn } from './OfficesColumn';
 
 export const metadata: Metadata = buildSeoMetadata({
   title: 'Contact Us',
   description:
-    'Contact Deep Rock Mining Co. Ltd in Accra, Ghana for gold trading, aggregation, mining operations, exploration, equipment supply, geological consulting and technical services.',
+    'Contact Deep Rock Mining Co. Ltd in Accra, Ghana and Columbus, Ohio for gold trading, aggregation, mining operations, exploration, equipment supply, geological consulting and technical services.',
   path: '/contact',
 });
 
@@ -79,15 +80,8 @@ export default function ContactPage() {
                 </div>
               </StaggerItem>
 
-              <StaggerItem className="flex gap-4">
-                <MapPin className="w-6 h-6 text-copper flex-shrink-0" />
-                <div>
-                  <h3 className="font-display text-lg text-basalt mb-2">Office</h3>
-                  <div className="text-graphite">
-                    <p>{companyContact.address}</p>
-                    <p className="text-sm mt-1">{companyContact.postalAddress}</p>
-                  </div>
-                </div>
+              <StaggerItem>
+                <OfficesColumn />
               </StaggerItem>
             </StaggerReveal>
 

@@ -18,6 +18,11 @@ export const leadershipTeam: LeadershipMember[] = [
     image: '/images/home/team/kelvin-siriboe.jpg',
   },
   {
+    name: 'Dr. Joseph Asante',
+    role: 'Director, International Relations',
+    image: '/images/home/team/jasante.jpeg',
+  },
+  {
     name: 'Mr. Abednego Edemor Vondee',
     role: 'Trading & Aggregation Manager',
     image: '/images/home/team/abed.jpeg',
