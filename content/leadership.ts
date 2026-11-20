@@ -18,6 +18,11 @@ export const leadershipTeam: LeadershipMember[] = [
     image: '/images/home/team/kelvin-siriboe.jpg',
   },
   {
+    name: 'Maxwell Tachie',
+    role: 'Chief Operating Officer (COO)',
+    image: '/images/home/team/maxwell.jpeg',
+  },
+  {
     name: 'Dr. Joseph Asante',
     role: 'Director, International Relations',
     image: '/images/home/team/jasante.jpeg',
